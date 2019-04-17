@@ -99,21 +99,21 @@ def get_total_trainable_parameters():
   return total_parameters
 
 def init_logger(log_folder, file_name="output.log"):
-  if os.path.exists(log_folder):
-    print("WARNING: The results directory (%s) already exists. Delete previous results directory [y/N]? " % log_folder, end="")
-    var = input()
-    if var is "y" or var is "Y":
-      print("removing directory ...")
-      shutil.rmtree(log_folder, ignore_errors=True)
-    else:
-      print("ERROR: The results directory already exists: %s" % log_folder)
-      sys.exit(1)  
+  i = 0
+  new_log_folder = log_folder + "try_" + str(i)
+
+  while os.path.exists(new_log_folder):
+      i = i + 1
+      new_log_folder = log_folder + "try_" + str(i)
+
+  log_folder = new_log_folder
+
   os.makedirs(log_folder)
   log_file_path = os.path.join(log_folder, file_name)
 
-  logger = logging.getLogger("my_logger") # unable to use a new file handler with the tensorflow logger 
+  logger = logging.getLogger("my_logger") # unable to use a new file handler with the tensorflow logger
   logger.setLevel(logging.DEBUG)
   logger.addHandler(logging.FileHandler(log_file_path))
   logger.addHandler(logging.StreamHandler())
-  
+
   return logger
