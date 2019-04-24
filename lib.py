@@ -9,21 +9,21 @@ default_dtype = tf.float32
 
 ###### Helper classes ---------
 class LoopCell(tf.contrib.rnn.RNNCell):
-  """ 
-  Dummy cell with an empty call/body function that should be overwritten 
+  """
+  Dummy cell with an empty call/body function that should be overwritten
   to easy implement a tf.while_loop with dynamic sequence lengths.
   """
   def __init__(self, h_shape, reuse=None, name=None):
     super(LoopCell, self).__init__(_reuse=reuse, name=name)
     # dummy output to make it work with dynamic_rnn
     #dummy_h = tf.zeros((batch_size, entityC_size, roleC_size, entityC_size))
-    dummy_h = tf.zeros(h_shape)
-
-    self.out = [dummy_h]
+    self.h_shape = h_shape
+    self.out = []
 
   @property
   def state_size(self):
-    return 0 # not executed but function has to be implemented
+    #  return 0 # not executed but function has to be implemented
+    return self.h_shape
 
   @property
   def output_size(self):
@@ -66,7 +66,7 @@ def norm(item, active, scope, axes=[-1]):
     return item
   mean, var = tf.nn.moments(item, axes=axes, keep_dims=True)
   normed = (item - mean) / tf.sqrt(var + 0.0000001)
-  
+
   with tf.variable_scope(scope):
     gain = tf.get_variable("LN_gain", [1], initializer=ones_init())
     bias = tf.get_variable("LN_bias", [1], initializer=zeros_init())
