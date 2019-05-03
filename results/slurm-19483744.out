@@ -1,0 +1,216 @@
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Configuration:
+{'LN': True,
+ 'beta1': 0.9,
+ 'beta2': 0.999,
+ 'data_path': 'tasks/en-valid-10k',
+ 'decay_factor': 0.5,
+ 'decay_thresh': 0.1,
+ 'do_decay': True,
+ 'do_warm_up': True,
+ 'entity_size': 90,
+ 'hidden_size': 40,
+ 'init_limit': 0.1,
+ 'learning_rate': 0.001,
+ 'log_folder': 'logs/default/0/',
+ 'log_keyword': 'default',
+ 'max_gradient_norm': 5.0,
+ 'role_size': 20,
+ 'symbol_size': 179,
+ 'task_id': 0,
+ 'vocab_size': 179,
+ 'warm_up_factor': 0.1,
+ 'warm_up_steps': 50}
+
+WARNING:tensorflow:From /home/abounasm/ift6760/tpr_rnn_graph.py:205: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:209: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+all trainable tensorflow variables:
+[<tf.Variable 'variables/word_embedding:0' shape=(179, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/story_position_embedding:0' shape=(12, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/output_embedding:0' shape=(90, 179) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_bias:0' shape=(1,) dtype=float32_ref>]
+total number of trainable parameters: 141985 
+
+2019-04-13 08:58:08.722543: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-04-13 08:58:09.498500: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199820000 Hz
+2019-04-13 08:58:09.561904: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5575ef28c950 executing computations on platform Host. Devices:
+2019-04-13 08:58:09.566003: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-13 08:58:09.917578: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5575ef5df120 executing computations on platform CUDA. Devices:
+2019-04-13 08:58:09.917650: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): Tesla P100-PCIE-12GB, Compute Capability 6.0
+2019-04-13 08:58:09.918529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-04-13 08:58:09.918578: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-04-13 08:58:09.920165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-13 08:58:09.920202: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-04-13 08:58:09.920224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-04-13 08:58:09.921014: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11338 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-04-13 09:00:19.478017: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+   0: cost=5.3109, accuracy= 0.0000, norm=29.173, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 0)
+   1: cost=5.2550, accuracy= 0.0000, norm=59.753, lr=0.0001 (epochs=0.0, steps/min=15, stories/min=478)
+   2: cost=6.9414, accuracy= 0.0000, norm=39.237, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=548)
+   3: cost=6.7975, accuracy= 0.0000, norm=08.070, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=556)
+   4: cost=5.9464, accuracy= 0.0000, norm=73.742, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=542)
+NaN cost during warmup, reinitializing.
+   0: cost=5.4199, accuracy= 0.0000, norm=21.389, lr=0.0001 (epochs=0.0, steps/min= 9, stories/min=282)
+   1: cost=5.4933, accuracy= 0.0000, norm=21.647, lr=0.0001 (epochs=0.0, steps/min=18, stories/min=565)
+   2: cost=5.4801, accuracy= 0.0000, norm=46.403, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=532)
+   3: cost=5.3394, accuracy= 0.0000, norm=54.642, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=537)
+   4: cost=5.5129, accuracy= 0.0000, norm=36.544, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=528)
+   5: cost=5.4580, accuracy= 0.0000, norm=20.784, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=545)
+   6: cost=5.1879, accuracy= 0.0000, norm=76.766, lr=0.0001 (epochs=0.0, steps/min=18, stories/min=561)
+   7: cost=5.3704, accuracy= 0.0000, norm=28.246, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=517)
+   8: cost=5.3201, accuracy= 0.0000, norm=40.212, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=551)
+   9: cost=5.4678, accuracy= 0.0000, norm=28.053, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=549)
+  10: cost=5.2411, accuracy= 0.0000, norm=21.750, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=529)
+  11: cost=5.2479, accuracy= 0.0000, norm=33.316, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=530)
+  12: cost=5.1753, accuracy= 0.0000, norm=11.331, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=533)
+  13: cost=5.3265, accuracy= 0.0000, norm=13.226, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=533)
+  14: cost=5.0789, accuracy= 0.0000, norm=19.001, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=527)
+  15: cost=5.1296, accuracy= 0.0000, norm=15.203, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=551)
+  16: cost=5.1805, accuracy= 0.0000, norm=11.658, lr=0.0001 (epochs=0.0, steps/min=18, stories/min=568)
+  17: cost=5.0894, accuracy= 0.0000, norm=23.870, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=558)
+  18: cost=5.2188, accuracy= 0.0000, norm=33.507, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=520)
+  19: cost=5.1876, accuracy= 0.0000, norm=22.920, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=539)
+  20: cost=5.1128, accuracy= 0.0000, norm=33.715, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=522)
+  21: cost=5.1483, accuracy= 0.0000, norm=23.001, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=519)
+  22: cost=5.2563, accuracy= 0.0000, norm=27.211, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=538)
+  23: cost=5.2589, accuracy= 0.0312, norm=28.692, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=534)
+  24: cost=5.2280, accuracy= 0.0000, norm=31.755, lr=0.0001 (epochs=0.0, steps/min=18, stories/min=562)
+  25: cost=5.2530, accuracy= 0.0000, norm=20.935, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=539)
+  26: cost=5.1193, accuracy= 0.0000, norm=33.515, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=545)
+  27: cost=5.1108, accuracy= 0.0000, norm=16.688, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=533)
+  28: cost=5.1706, accuracy= 0.0000, norm=27.535, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=527)
+  29: cost=5.2780, accuracy= 0.0000, norm=28.582, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=541)
+  30: cost=5.3061, accuracy= 0.0000, norm=45.937, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=537)
+  31: cost=5.1194, accuracy= 0.0000, norm=17.890, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=541)
+  32: cost=5.1458, accuracy= 0.0000, norm=33.606, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=539)
+  33: cost=4.8949, accuracy= 0.0312, norm=36.263, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=532)
+  34: cost=4.8911, accuracy= 0.0938, norm=27.823, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=548)
+  35: cost=5.0712, accuracy= 0.0000, norm=21.122, lr=0.0001 (epochs=0.0, steps/min=18, stories/min=562)
+  36: cost=5.1148, accuracy= 0.0000, norm=13.340, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=526)
+  37: cost=4.9208, accuracy= 0.0312, norm=15.814, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 1)
+  38: cost=5.1336, accuracy= 0.0312, norm=15.360, lr=0.0001 (epochs=0.0, steps/min= 6, stories/min=182)
+  39: cost=5.0161, accuracy= 0.0000, norm=24.887, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=502)
+  40: cost=4.9945, accuracy= 0.0625, norm=80.422, lr=0.0001 (epochs=0.0, steps/min=17, stories/min=531)
+  41: cost=5.1160, accuracy= 0.0625, norm=20.808, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=512)
+  42: cost=5.0243, accuracy= 0.0312, norm=17.505, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=498)
+  43: cost=5.1529, accuracy= 0.0938, norm=21.391, lr=0.0001 (epochs=0.0, steps/min=16, stories/min=499)
+  44: cost=5.1275, accuracy= 0.0000, norm=48.213, lr=0.0001 (epochs=0.0, steps/min=198, stories/min=6334)
+  45: cost=5.0796, accuracy= 0.0000, norm=30.825, lr=0.0010 (epochs=0.0, steps/min=16, stories/min=519)
+  46: cost=4.6320, accuracy= 0.2500, norm=38.457, lr=0.0010 (epochs=0.0, steps/min=16, stories/min=514)
+  47: cost=5.0802, accuracy= 0.1250, norm=45.485, lr=0.0010 (epochs=0.0, steps/min=16, stories/min=526)
+  48: cost=4.5778, accuracy= 0.0938, norm=41.283, lr=0.0010 (epochs=0.0, steps/min=17, stories/min=546)
+  49: cost=4.3840, accuracy= 0.0625, norm=15.498, lr=0.0010 (epochs=0.0, steps/min=17, stories/min=530)
+ 250: cost=1.1217, accuracy= 0.5625, norm=06.724, lr=0.0010 (epochs=0.0, steps/min= 6, stories/min=195)
+ 500: cost=1.3897, accuracy= 0.3438, norm=08.509, lr=0.0010 (epochs=0.1, steps/min=16, stories/min=505)
+
+task: 0 
+valid evaluation: cost=1.1779, accuracy=0.4956 (20002.0 stories in 0.5 min)
+test evaluation: cost=1.1825, accuracy=0.4912 (20000.0 stories in 0.4 min)
+Total time passed: 76.2 min
+
+ 750: cost=1.0695, accuracy= 0.4688, norm=07.026, lr=0.0010 (epochs=0.1, steps/min=13, stories/min=419)
+1000: cost=1.1404, accuracy= 0.5625, norm=07.353, lr=0.0010 (epochs=0.2, steps/min=15, stories/min=471)
+
+task: 0 
+valid evaluation: cost=1.0192, accuracy=0.5481 (20002.0 stories in 0.3 min)
+test evaluation: cost=1.0136, accuracy=0.5521 (20000.0 stories in 0.3 min)
+Total time passed: 112.1 min
+
+1250: cost=0.8992, accuracy= 0.6250, norm=06.252, lr=0.0010 (epochs=0.2, steps/min=14, stories/min=451)
+1500: cost=0.8997, accuracy= 0.6250, norm=04.205, lr=0.0010 (epochs=0.3, steps/min=15, stories/min=479)
+
+task: 0 
+valid evaluation: cost=1.0154, accuracy=0.5953 (20002.0 stories in 0.4 min)
+test evaluation: cost=0.9851, accuracy=0.5983 (20000.0 stories in 0.3 min)
+Total time passed: 146.6 min
+
+1750: cost=1.3791, accuracy= 0.5312, norm=05.535, lr=0.0010 (epochs=0.3, steps/min=14, stories/min=449)
+2000: cost=1.0650, accuracy= 0.5938, norm=05.210, lr=0.0010 (epochs=0.4, steps/min=14, stories/min=464)
+
+task: 0 
+valid evaluation: cost=0.8758, accuracy=0.6185 (20002.0 stories in 0.4 min)
+test evaluation: cost=0.8690, accuracy=0.6256 (20000.0 stories in 0.3 min)
+Total time passed: 181.6 min
+
+2250: cost=1.0315, accuracy= 0.6250, norm=04.800, lr=0.0010 (epochs=0.4, steps/min=14, stories/min=436)
+2500: cost=1.0302, accuracy= 0.5625, norm=74.892, lr=0.0010 (epochs=0.4, steps/min=14, stories/min=451)
+
+task: 0 
+valid evaluation: cost=0.7990, accuracy=0.6615 (20002.0 stories in 0.4 min)
+test evaluation: cost=0.8066, accuracy=0.6539 (20000.0 stories in 0.3 min)
+Total time passed: 217.7 min
+
+2750: cost=0.5452, accuracy= 0.8125, norm=03.444, lr=0.0010 (epochs=0.5, steps/min=13, stories/min=418)
+3000: cost=0.9077, accuracy= 0.5625, norm=04.120, lr=0.0010 (epochs=0.5, steps/min=14, stories/min=433)
+
+task: 0 
+valid evaluation: cost=0.7648, accuracy=0.6829 (20002.0 stories in 0.4 min)
+test evaluation: cost=0.7648, accuracy=0.6818 (20000.0 stories in 0.3 min)
+Total time passed: 255.4 min
+
+3250: cost=0.6984, accuracy= 0.6562, norm=03.603, lr=0.0010 (epochs=0.6, steps/min=13, stories/min=407)
+3500: cost=0.8031, accuracy= 0.6250, norm=04.627, lr=0.0010 (epochs=0.6, steps/min=13, stories/min=417)
+
+task: 0 
+valid evaluation: cost=0.7241, accuracy=0.6995 (20002.0 stories in 0.3 min)
+test evaluation: cost=0.7252, accuracy=0.7016 (20000.0 stories in 0.3 min)
+Total time passed: 294.1 min
+
+slurmstepd: error: *** JOB 19483744 ON cdr209 CANCELLED AT 2019-04-13T13:54:41 DUE TO TIME LIMIT ***

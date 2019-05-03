@@ -1,0 +1,21 @@
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+read train ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_train.pik
+read valid ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_valid.pik
+read test ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_test.pik
+WARNING: The results directory (logs/default/0/) already exists. Delete previous results directory [y/N]? Traceback (most recent call last):
+  File "train.py", line 18, in <module>
+    from tpr_rnn_graph import * 
+  File "/home/abounasm/ift6760/tpr_rnn_graph.py", line 57, in <module>
+    logger = init_logger(c.log_folder) # will not log tensorflow outputs like GPU infos and warnings
+  File "/home/abounasm/ift6760/lib.py", line 104, in init_logger
+    var = input()
+EOFError: EOF when reading a line

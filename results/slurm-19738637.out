@@ -1,0 +1,1340 @@
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Configuration:
+{'LN': True,
+ 'beta1': 0.9,
+ 'beta2': 0.999,
+ 'data_path': 'tasks/en-valid-10k',
+ 'decay_factor': 0.5,
+ 'decay_thresh': 0.1,
+ 'do_decay': True,
+ 'do_warm_up': True,
+ 'entity_size': 90,
+ 'hidden_size': 40,
+ 'init_limit': 0.1,
+ 'learning_rate': 0.001,
+ 'log_folder': 'logs/default/0/',
+ 'log_keyword': 'default',
+ 'max_gradient_norm': 5.0,
+ 'role_size': 20,
+ 'symbol_size': 179,
+ 'task_id': 0,
+ 'vocab_size': 179,
+ 'warm_up_factor': 0.1,
+ 'warm_up_steps': 50}
+
+WARNING:tensorflow:From /scratch/abounasm/ift6760/tpr_rnn_graph.py:205: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:209: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+all trainable tensorflow variables:
+[<tf.Variable 'variables/word_embedding:0' shape=(179, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/story_position_embedding:0' shape=(12, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/output_embedding:0' shape=(90, 179) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_bias:0' shape=(1,) dtype=float32_ref>]
+total number of trainable parameters: 141985 
+
+2019-04-18 16:10:27.939053: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-04-18 16:10:28.341293: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2199870000 Hz
+2019-04-18 16:10:28.373170: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55a790b28810 executing computations on platform Host. Devices:
+2019-04-18 16:10:28.374216: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-18 16:10:28.740385: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55a7916c3e70 executing computations on platform CUDA. Devices:
+2019-04-18 16:10:28.740470: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): Tesla P100-PCIE-12GB, Compute Capability 6.0
+2019-04-18 16:10:28.741360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-04-18 16:10:28.741420: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-04-18 16:10:28.742992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-18 16:10:28.743044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-04-18 16:10:28.743080: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-04-18 16:10:28.743878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11338 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-04-18 16:12:43.354609: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-04-18 16:12:45.011309: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcupti.so.9.0 locally
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/profiler/internal/flops_registry.py:142: tensor_shape_from_node_def_name (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.compat.v1.graph_util.remove_training_nodes
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Parsing Inputs...
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+Transpose                   2929.09MB (100.00%, 27.90%),     196.02ms (100.00%, 29.39%),      22.95ms (100.00%, 15.12%),     173.07ms (100.00%, 33.59%)
+BatchMatMul                  2215.38MB (72.10%, 21.10%),       70.57ms (70.61%, 10.58%),       47.25ms (84.88%, 31.13%),        23.32ms (66.41%, 4.53%)
+TensorArrayGatherV3             73.27MB (51.00%, 0.70%),        58.36ms (60.03%, 8.75%),         1.20ms (53.75%, 0.79%),       57.16ms (61.88%, 11.09%)
+Mul                          3004.62MB (50.31%, 28.62%),        51.03ms (51.28%, 7.65%),       27.68ms (52.95%, 18.24%),        23.35ms (50.79%, 4.53%)
+ApplyAdam                             0B (0.00%, 0.00%),        36.55ms (43.63%, 5.48%),          697us (34.72%, 0.46%),        35.85ms (46.26%, 6.96%)
+TensorArrayScatterV3            69.52MB (21.69%, 0.66%),        33.55ms (38.15%, 5.03%),         2.09ms (34.26%, 1.38%),        31.46ms (39.30%, 6.11%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4       11.52KB (21.03%, 0.00%),        31.07ms (33.12%, 4.66%),            5us (32.88%, 0.00%),        31.06ms (33.19%, 6.03%)
+Sum                             21.66MB (21.03%, 0.21%),        26.59ms (28.46%, 3.99%),         9.83ms (32.88%, 6.48%),        16.76ms (27.16%, 3.25%)
+StackPushV2                           0B (0.00%, 0.00%),        20.59ms (24.48%, 3.09%),            0us (26.40%, 0.00%),        20.59ms (23.91%, 4.00%)
+Add                            691.44MB (20.82%, 6.59%),        18.77ms (21.39%, 2.81%),        10.68ms (26.40%, 7.03%),         8.10ms (19.91%, 1.57%)
+ZerosLike                      671.40MB (14.24%, 6.39%),        17.61ms (18.58%, 2.64%),         1.78ms (19.37%, 1.18%),        15.83ms (18.34%, 3.07%)
+AddN                                  0B (0.00%, 0.00%),        15.84ms (15.94%, 2.38%),        10.70ms (18.19%, 7.05%),         5.14ms (15.27%, 1.00%)
+Select                          696.06MB (7.84%, 6.63%),        15.44ms (13.56%, 2.31%),        12.71ms (11.14%, 8.37%),         2.74ms (14.27%, 0.53%)
+TensorArrayGradV3               120.12KB (1.21%, 0.00%),        10.45ms (11.25%, 1.57%),             0us (2.77%, 0.00%),        10.45ms (13.74%, 2.03%)
+MatMul                           35.58MB (1.21%, 0.34%),          9.79ms (9.68%, 1.47%),          2.08ms (2.77%, 1.37%),         7.71ms (11.71%, 1.50%)
+Shape                            19.40KB (0.87%, 0.00%),          6.69ms (8.21%, 1.00%),             0us (1.40%, 0.00%),         6.69ms (10.22%, 1.30%)
+StackPopV2                            0B (0.00%, 0.00%),          6.00ms (7.21%, 0.90%),             0us (1.40%, 0.00%),          6.00ms (8.92%, 1.16%)
+StackV2                          11.70KB (0.87%, 0.00%),          5.96ms (6.31%, 0.89%),             0us (1.40%, 0.00%),          5.96ms (7.76%, 1.16%)
+Reshape                             256B (0.87%, 0.00%),          4.12ms (5.42%, 0.62%),             0us (1.40%, 0.00%),          4.12ms (6.60%, 0.80%)
+Sub                              34.56KB (0.87%, 0.00%),          2.88ms (4.80%, 0.43%),           453us (1.40%, 0.30%),          2.43ms (5.80%, 0.47%)
+Neg                              22.31MB (0.87%, 0.21%),          2.54ms (4.37%, 0.38%),           396us (1.10%, 0.26%),          2.14ms (5.33%, 0.42%)
+BroadcastGradientArgs             2.78KB (0.66%, 0.00%),          2.43ms (3.99%, 0.36%),             0us (0.84%, 0.00%),          2.43ms (4.91%, 0.47%)
+Merge                             1.72KB (0.66%, 0.00%),          1.74ms (3.62%, 0.26%),             0us (0.84%, 0.00%),          1.74ms (4.44%, 0.34%)
+L2Loss                           17.15KB (0.66%, 0.00%),          1.72ms (3.36%, 0.26%),           212us (0.84%, 0.14%),          1.51ms (4.10%, 0.29%)
+ExpandDims                            0B (0.00%, 0.00%),          1.61ms (3.10%, 0.24%),             0us (0.70%, 0.00%),          1.61ms (3.81%, 0.31%)
+Pack                              5.95KB (0.66%, 0.00%),          1.52ms (2.86%, 0.23%),             4us (0.70%, 0.00%),          1.52ms (3.50%, 0.29%)
+LogicalAnd                            0B (0.00%, 0.00%),          1.30ms (2.63%, 0.20%),           130us (0.69%, 0.09%),          1.17ms (3.20%, 0.23%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          1.30ms (2.44%, 0.19%),             0us (0.61%, 0.00%),          1.30ms (2.98%, 0.25%)
+NextIteration                         0B (0.00%, 0.00%),          1.20ms (2.24%, 0.18%),             0us (0.61%, 0.00%),          1.20ms (2.72%, 0.23%)
+CheckNumerics                     1.02KB (0.66%, 0.00%),          1.18ms (2.06%, 0.18%),             0us (0.61%, 0.00%),          1.18ms (2.49%, 0.23%)
+StridedSlice                      3.68KB (0.66%, 0.00%),          1.12ms (1.88%, 0.17%),             0us (0.61%, 0.00%),          1.12ms (2.26%, 0.22%)
+Switch                                0B (0.00%, 0.00%),           998us (1.72%, 0.15%),             0us (0.61%, 0.00%),           998us (2.04%, 0.19%)
+OneHot                           33.83MB (0.66%, 0.32%),           987us (1.57%, 0.15%),           192us (0.61%, 0.13%),           795us (1.85%, 0.15%)
+Fill                             33.55MB (0.34%, 0.32%),           984us (1.42%, 0.15%),            56us (0.48%, 0.04%),           928us (1.70%, 0.18%)
+RealDiv                          55.30KB (0.02%, 0.00%),           788us (1.27%, 0.12%),           121us (0.44%, 0.08%),           667us (1.52%, 0.13%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),           766us (1.15%, 0.11%),             0us (0.37%, 0.00%),           766us (1.39%, 0.15%)
+Const                             2.46KB (0.02%, 0.00%),           675us (1.04%, 0.10%),             0us (0.37%, 0.00%),           675us (1.24%, 0.13%)
+Tanh                                  0B (0.00%, 0.00%),           573us (0.94%, 0.09%),            66us (0.37%, 0.04%),           507us (1.11%, 0.10%)
+TanhGrad                              0B (0.00%, 0.00%),           568us (0.85%, 0.09%),            86us (0.32%, 0.06%),           482us (1.01%, 0.09%)
+VariableV2                        1.61MB (0.02%, 0.02%),           533us (0.77%, 0.08%),             0us (0.26%, 0.00%),           533us (0.91%, 0.10%)
+Enter                                 0B (0.00%, 0.00%),           444us (0.69%, 0.07%),             0us (0.26%, 0.00%),           444us (0.81%, 0.09%)
+GreaterEqual                      8.22KB (0.00%, 0.00%),           402us (0.62%, 0.06%),             0us (0.26%, 0.00%),           402us (0.73%, 0.08%)
+SparseSoftmaxCrossEntropyWithLogits           768B (0.00%, 0.00%),           376us (0.56%, 0.06%),           181us (0.26%, 0.12%),           195us (0.65%, 0.04%)
+Less                             16.90KB (0.00%, 0.00%),           369us (0.50%, 0.06%),             0us (0.15%, 0.00%),           369us (0.61%, 0.07%)
+Mean                              2.05KB (0.00%, 0.00%),           306us (0.45%, 0.05%),            37us (0.15%, 0.02%),           269us (0.54%, 0.05%)
+Cast                              2.05KB (0.00%, 0.00%),           267us (0.40%, 0.04%),            26us (0.12%, 0.02%),           241us (0.49%, 0.05%)
+Tile                             80.38KB (0.00%, 0.00%),           262us (0.36%, 0.04%),            35us (0.10%, 0.02%),           227us (0.44%, 0.04%)
+DynamicStitch                     1.54KB (0.00%, 0.00%),           243us (0.32%, 0.04%),            38us (0.08%, 0.03%),           205us (0.39%, 0.04%)
+Identity                              0B (0.00%, 0.00%),           150us (0.29%, 0.02%),             0us (0.06%, 0.00%),           150us (0.35%, 0.03%)
+TensorArrayV3                     3.64KB (0.00%, 0.00%),           143us (0.26%, 0.02%),             0us (0.06%, 0.00%),           143us (0.33%, 0.03%)
+Sqrt                                  0B (0.00%, 0.00%),           136us (0.24%, 0.02%),            15us (0.06%, 0.01%),           121us (0.30%, 0.02%)
+SquaredDifference                34.56KB (0.00%, 0.00%),           127us (0.22%, 0.02%),            20us (0.05%, 0.01%),           107us (0.27%, 0.02%)
+SqrtGrad                              0B (0.00%, 0.00%),           123us (0.20%, 0.02%),            12us (0.03%, 0.01%),           111us (0.25%, 0.02%)
+LoopCond                              0B (0.00%, 0.00%),           118us (0.19%, 0.02%),             0us (0.03%, 0.00%),           118us (0.23%, 0.02%)
+InvertPermutation                     0B (0.00%, 0.00%),           106us (0.17%, 0.02%),             0us (0.03%, 0.00%),           106us (0.21%, 0.02%)
+FloorDiv                          1.54KB (0.00%, 0.00%),            98us (0.15%, 0.01%),             0us (0.03%, 0.00%),            98us (0.19%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            89us (0.14%, 0.01%),             3us (0.03%, 0.00%),            86us (0.17%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            81us (0.12%, 0.01%),             4us (0.02%, 0.00%),            77us (0.15%, 0.01%)
+ArgMax                              256B (0.00%, 0.00%),            79us (0.11%, 0.01%),            25us (0.02%, 0.02%),            54us (0.14%, 0.01%)
+Assign                                0B (0.00%, 0.00%),            77us (0.10%, 0.01%),             0us (0.00%, 0.00%),            77us (0.13%, 0.01%)
+ControlTrigger                        0B (0.00%, 0.00%),            75us (0.09%, 0.01%),             0us (0.00%, 0.00%),            75us (0.11%, 0.01%)
+IsNan                               256B (0.00%, 0.00%),            73us (0.08%, 0.01%),             3us (0.00%, 0.00%),            70us (0.10%, 0.01%)
+Maximum                              16B (0.00%, 0.00%),            72us (0.07%, 0.01%),             0us (0.00%, 0.00%),            72us (0.08%, 0.01%)
+Prod                                304B (0.00%, 0.00%),            66us (0.05%, 0.01%),             0us (0.00%, 0.00%),            66us (0.07%, 0.01%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),            64us (0.04%, 0.01%),             0us (0.00%, 0.00%),            64us (0.06%, 0.01%)
+Range                             1.96KB (0.00%, 0.00%),            44us (0.04%, 0.01%),             0us (0.00%, 0.00%),            44us (0.05%, 0.01%)
+Equal                               512B (0.00%, 0.00%),            37us (0.03%, 0.01%),             0us (0.00%, 0.00%),            37us (0.04%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            32us (0.02%, 0.00%),             0us (0.00%, 0.00%),            32us (0.03%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            31us (0.02%, 0.00%),             0us (0.00%, 0.00%),            31us (0.02%, 0.01%)
+All                                   0B (0.00%, 0.00%),            22us (0.01%, 0.00%),             0us (0.00%, 0.00%),            22us (0.02%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             7us (0.01%, 0.00%),             0us (0.00%, 0.00%),             7us (0.01%, 0.00%)
+Assert                                0B (0.00%, 0.00%),             7us (0.01%, 0.00%),             0us (0.00%, 0.00%),             7us (0.01%, 0.00%)
+_retval_hyper_params/learning_rate_0_0             0B (0.00%, 0.00%),             7us (0.01%, 0.00%),             0us (0.00%, 0.00%),             7us (0.01%, 0.00%)
+ConstantFolding/model/update_module/rnn/stack_const_axis             0B (0.00%, 0.00%),             5us (0.01%, 0.00%),             0us (0.00%, 0.00%),             5us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/one_step/add_grad/Sum_1-reduction_indices             0B (0.00%, 0.00%),             5us (0.01%, 0.00%),             0us (0.00%, 0.00%),             5us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/three_step/mul_grad/Sum_1-reduction_indices             0B (0.00%, 0.00%),             5us (0.01%, 0.00%),             0us (0.00%, 0.00%),             5us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             5us (0.01%, 0.00%),             0us (0.00%, 0.00%),             5us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/add_4_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             4us (0.00%, 0.00%),             0us (0.00%, 0.00%),             4us (0.01%, 0.00%)
+NoOp                                  0B (0.00%, 0.00%),             4us (0.00%, 0.00%),             0us (0.00%, 0.00%),             4us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-0             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum_1/Mul_grad/BroadcastGradientArgs-bcastargs-0             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum_2/Mul_grad/BroadcastGradientArgs-bcastargs-0             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/one_step/mul_grad/Sum_1-reduction_indices             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/sub_1_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+_ZN10tensorflow95_GLOBAL__N__71_tmpxft_0004f927_00000000_11_check_numerics_op_gpu_cu_compute_70_cpp1_ii_fd5a2dcc19CheckNumericsKernelIfEEvPKT_iPi             0B (0.00%, 0.00%),             3us (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           256B (0.00%, 0.00%),             3us (0.00%, 0.00%),             0us (0.00%, 0.00%),             3us (0.00%, 0.00%)
+
+======================End of Report==========================
+351 ops no flops stats due to incomplete shapes.
+   0: cost=5.2851, accuracy= 0.0000, norm=16.202, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 0)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+Transpose                   3420.85MB (100.00%, 27.94%),     117.60ms (100.00%, 22.31%),      26.62ms (100.00%, 15.09%),      90.98ms (100.00%, 25.95%)
+BatchMatMul                  2576.28MB (72.06%, 21.04%),       81.53ms (77.69%, 15.47%),       55.22ms (84.91%, 31.29%),        26.30ms (74.05%, 7.50%)
+Mul                          3508.56MB (51.02%, 28.65%),       58.77ms (62.22%, 11.15%),       32.55ms (53.62%, 18.45%),        26.21ms (66.55%, 7.48%)
+TensorArrayGatherV3             67.47MB (22.37%, 0.55%),        31.66ms (51.08%, 6.01%),         1.06ms (35.18%, 0.60%),        30.60ms (59.07%, 8.73%)
+Sum                             25.43MB (21.81%, 0.21%),        30.89ms (45.07%, 5.86%),        11.55ms (34.58%, 6.54%),        19.33ms (50.35%, 5.51%)
+Add                            816.02MB (21.61%, 6.66%),        21.63ms (39.21%, 4.10%),        12.65ms (28.03%, 7.17%),         8.98ms (44.83%, 2.56%)
+TensorArrayScatterV3            69.52MB (14.94%, 0.57%),        20.60ms (35.11%, 3.91%),         2.09ms (20.86%, 1.19%),        18.51ms (42.27%, 5.28%)
+ApplyAdam                             0B (0.00%, 0.00%),        19.57ms (31.20%, 3.71%),          672us (19.68%, 0.38%),        18.88ms (36.99%, 5.39%)
+AddN                                  0B (0.00%, 0.00%),        18.56ms (27.49%, 3.52%),        12.65ms (19.30%, 7.17%),         5.91ms (31.61%, 1.69%)
+Select                         829.27MB (14.37%, 6.77%),        18.12ms (23.97%, 3.44%),        15.01ms (12.13%, 8.50%),         3.11ms (29.92%, 0.89%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        11.52KB (7.60%, 0.00%),        15.55ms (20.53%, 2.95%),             4us (3.63%, 0.00%),        15.55ms (29.03%, 4.43%)
+StackPushV2                           0B (0.00%, 0.00%),        15.03ms (17.58%, 2.85%),             0us (3.62%, 0.00%),        15.03ms (24.60%, 4.29%)
+ZerosLike                       799.52MB (7.60%, 6.53%),        10.66ms (14.73%, 2.02%),          2.13ms (3.62%, 1.20%),         8.53ms (20.31%, 2.43%)
+MatMul                           35.32MB (1.07%, 0.29%),         6.87ms (12.71%, 1.30%),          2.03ms (2.42%, 1.15%),         4.83ms (17.88%, 1.38%)
+Shape                            22.60KB (0.78%, 0.00%),         6.72ms (11.40%, 1.27%),             0us (1.27%, 0.00%),         6.72ms (16.50%, 1.92%)
+TensorArrayGradV3               141.96KB (0.78%, 0.00%),         6.65ms (10.13%, 1.26%),             0us (1.27%, 0.00%),         6.65ms (14.59%, 1.90%)
+StackPopV2                            0B (0.00%, 0.00%),          6.54ms (8.87%, 1.24%),             0us (1.27%, 0.00%),         6.54ms (12.69%, 1.87%)
+Reshape                             256B (0.78%, 0.00%),          4.59ms (7.62%, 0.87%),             0us (1.27%, 0.00%),         4.59ms (10.82%, 1.31%)
+StackV2                          11.70KB (0.78%, 0.00%),          3.24ms (6.75%, 0.61%),             0us (1.27%, 0.00%),          3.24ms (9.51%, 0.92%)
+Sub                              34.56KB (0.78%, 0.00%),          3.17ms (6.14%, 0.60%),           522us (1.27%, 0.30%),          2.64ms (8.59%, 0.75%)
+Neg                              26.45MB (0.78%, 0.22%),          2.92ms (5.54%, 0.55%),           445us (0.97%, 0.25%),          2.48ms (7.83%, 0.71%)
+BroadcastGradientArgs             3.26KB (0.57%, 0.00%),          2.56ms (4.98%, 0.49%),             0us (0.72%, 0.00%),          2.56ms (7.13%, 0.73%)
+Merge                             2.03KB (0.57%, 0.00%),          1.93ms (4.50%, 0.37%),             0us (0.72%, 0.00%),          1.93ms (6.40%, 0.55%)
+ExpandDims                            0B (0.00%, 0.00%),          1.66ms (4.13%, 0.32%),             0us (0.72%, 0.00%),          1.66ms (5.85%, 0.47%)
+L2Loss                           17.15KB (0.57%, 0.00%),          1.53ms (3.82%, 0.29%),           209us (0.72%, 0.12%),          1.32ms (5.38%, 0.38%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          1.51ms (3.53%, 0.29%),             0us (0.60%, 0.00%),          1.51ms (5.00%, 0.43%)
+Pack                              6.38KB (0.57%, 0.00%),          1.48ms (3.24%, 0.28%),             4us (0.60%, 0.00%),          1.48ms (4.57%, 0.42%)
+LogicalAnd                            0B (0.00%, 0.00%),          1.46ms (2.96%, 0.28%),           152us (0.60%, 0.09%),          1.31ms (4.15%, 0.37%)
+NextIteration                         0B (0.00%, 0.00%),          1.32ms (2.68%, 0.25%),             0us (0.51%, 0.00%),          1.32ms (3.77%, 0.38%)
+CheckNumerics                     1.02KB (0.57%, 0.00%),          1.28ms (2.43%, 0.24%),             0us (0.51%, 0.00%),          1.28ms (3.40%, 0.37%)
+Switch                                0B (0.00%, 0.00%),          1.16ms (2.19%, 0.22%),             0us (0.51%, 0.00%),          1.16ms (3.03%, 0.33%)
+StridedSlice                      3.77KB (0.57%, 0.00%),          1.10ms (1.97%, 0.21%),             0us (0.51%, 0.00%),          1.10ms (2.70%, 0.31%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),           832us (1.76%, 0.16%),             0us (0.51%, 0.00%),           832us (2.39%, 0.24%)
+Const                             2.46KB (0.57%, 0.00%),           787us (1.60%, 0.15%),             0us (0.51%, 0.00%),           787us (2.15%, 0.22%)
+RealDiv                          55.30KB (0.57%, 0.00%),           735us (1.45%, 0.14%),           116us (0.51%, 0.07%),           617us (1.93%, 0.18%)
+OneHot                           33.83MB (0.56%, 0.28%),           624us (1.31%, 0.12%),           189us (0.45%, 0.11%),           433us (1.75%, 0.12%)
+Fill                             33.55MB (0.29%, 0.27%),           537us (1.20%, 0.10%),            55us (0.34%, 0.03%),           482us (1.63%, 0.14%)
+VariableV2                        1.61MB (0.01%, 0.01%),           522us (1.09%, 0.10%),             0us (0.31%, 0.00%),           522us (1.49%, 0.15%)
+TanhGrad                              0B (0.00%, 0.00%),           501us (1.00%, 0.10%),            85us (0.31%, 0.05%),           415us (1.34%, 0.12%)
+Tanh                                  0B (0.00%, 0.00%),           487us (0.90%, 0.09%),            65us (0.26%, 0.04%),           421us (1.22%, 0.12%)
+GreaterEqual                      9.77KB (0.00%, 0.00%),           433us (0.81%, 0.08%),             0us (0.22%, 0.00%),           433us (1.10%, 0.12%)
+Enter                                 0B (0.00%, 0.00%),           424us (0.73%, 0.08%),             0us (0.22%, 0.00%),           424us (0.98%, 0.12%)
+Less                             19.97KB (0.00%, 0.00%),           381us (0.65%, 0.07%),             0us (0.22%, 0.00%),           381us (0.86%, 0.11%)
+SparseSoftmaxCrossEntropyWithLogits           768B (0.00%, 0.00%),           325us (0.57%, 0.06%),           180us (0.22%, 0.10%),           145us (0.75%, 0.04%)
+Mean                              2.05KB (0.00%, 0.00%),           286us (0.51%, 0.05%),            36us (0.12%, 0.02%),           250us (0.71%, 0.07%)
+Cast                              2.05KB (0.00%, 0.00%),           251us (0.46%, 0.05%),            25us (0.10%, 0.01%),           225us (0.64%, 0.06%)
+Tile                             80.38KB (0.00%, 0.00%),           240us (0.41%, 0.05%),            35us (0.09%, 0.02%),           205us (0.57%, 0.06%)
+DynamicStitch                     1.54KB (0.00%, 0.00%),           226us (0.36%, 0.04%),            37us (0.07%, 0.02%),           188us (0.51%, 0.05%)
+Identity                              0B (0.00%, 0.00%),           163us (0.32%, 0.03%),             0us (0.05%, 0.00%),           163us (0.46%, 0.05%)
+LoopCond                              0B (0.00%, 0.00%),           132us (0.29%, 0.03%),             0us (0.05%, 0.00%),           132us (0.41%, 0.04%)
+InvertPermutation                     0B (0.00%, 0.00%),           131us (0.27%, 0.02%),             0us (0.05%, 0.00%),           131us (0.38%, 0.04%)
+TensorArrayV3                     3.64KB (0.00%, 0.00%),           120us (0.24%, 0.02%),             0us (0.05%, 0.00%),           120us (0.34%, 0.03%)
+SquaredDifference                34.56KB (0.00%, 0.00%),           119us (0.22%, 0.02%),            20us (0.05%, 0.01%),            99us (0.30%, 0.03%)
+Sqrt                                  0B (0.00%, 0.00%),           117us (0.20%, 0.02%),            15us (0.04%, 0.01%),           102us (0.28%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),            96us (0.17%, 0.02%),            12us (0.03%, 0.01%),            84us (0.25%, 0.02%)
+ControlTrigger                        0B (0.00%, 0.00%),            83us (0.15%, 0.02%),             0us (0.02%, 0.00%),            83us (0.22%, 0.02%)
+FloorDiv                          1.54KB (0.00%, 0.00%),            77us (0.14%, 0.01%),             0us (0.02%, 0.00%),            77us (0.20%, 0.02%)
+Maximum                              16B (0.00%, 0.00%),            69us (0.12%, 0.01%),             0us (0.02%, 0.00%),            69us (0.18%, 0.02%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),            68us (0.11%, 0.01%),             0us (0.02%, 0.00%),            68us (0.16%, 0.02%)
+ArgMax                              256B (0.00%, 0.00%),            67us (0.10%, 0.01%),            25us (0.02%, 0.01%),            42us (0.14%, 0.01%)
+Minimum                               0B (0.00%, 0.00%),            66us (0.09%, 0.01%),             3us (0.01%, 0.00%),            63us (0.13%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            65us (0.07%, 0.01%),             0us (0.00%, 0.00%),            65us (0.11%, 0.02%)
+Prod                                304B (0.00%, 0.00%),            62us (0.06%, 0.01%),             0us (0.00%, 0.00%),            62us (0.09%, 0.02%)
+IsNan                               256B (0.00%, 0.00%),            57us (0.05%, 0.01%),             3us (0.00%, 0.00%),            54us (0.07%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            54us (0.04%, 0.01%),             4us (0.00%, 0.00%),            50us (0.06%, 0.01%)
+Range                             1.96KB (0.00%, 0.00%),            37us (0.03%, 0.01%),             0us (0.00%, 0.00%),            37us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.03%, 0.01%)
+Equal                               512B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            21us (0.01%, 0.00%),             0us (0.00%, 0.00%),            21us (0.02%, 0.01%)
+All                                   0B (0.00%, 0.00%),            14us (0.01%, 0.00%),             0us (0.00%, 0.00%),            14us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum_1/Mul_grad/BroadcastGradientArgs-bcastargs-0             0B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           256B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+
+======================End of Report==========================
+   1: cost=5.3036, accuracy= 0.0000, norm=41.795, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=52)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 3917.36MB (100.00%, 21.16%),     122.78ms (100.00%, 18.41%),      83.12ms (100.00%, 31.45%),       39.65ms (100.00%, 9.85%)
+Transpose                    5180.99MB (78.84%, 27.99%),      118.08ms (81.59%, 17.70%),       39.72ms (68.55%, 15.03%),       78.36ms (90.15%, 19.47%)
+Mul                          5314.47MB (50.84%, 28.71%),       88.73ms (63.89%, 13.30%),       49.43ms (53.52%, 18.70%),        39.25ms (70.68%, 9.75%)
+Sum                             38.04MB (22.13%, 0.21%),        46.75ms (50.59%, 7.01%),        17.50ms (34.81%, 6.62%),        29.22ms (60.93%, 7.26%)
+Add                           1244.71MB (21.92%, 6.72%),        32.80ms (43.58%, 4.92%),        19.39ms (28.19%, 7.34%),        13.40ms (53.67%, 3.33%)
+AddN                                  0B (0.00%, 0.00%),        28.27ms (38.66%, 4.24%),        19.34ms (20.85%, 7.32%),         8.92ms (50.34%, 2.22%)
+Select                        1259.18MB (15.20%, 6.80%),        27.61ms (34.42%, 4.14%),        22.86ms (13.53%, 8.65%),         4.75ms (48.12%, 1.18%)
+TensorArrayGatherV3              70.73MB (8.40%, 0.38%),        26.18ms (30.28%, 3.93%),           999us (4.88%, 0.38%),        25.18ms (46.95%, 6.26%)
+ZerosLike                      1233.55MB (8.01%, 6.66%),        20.15ms (26.35%, 3.02%),          3.27ms (4.50%, 1.24%),        16.88ms (40.69%, 4.19%)
+TensorArrayScatterV3             83.43MB (1.35%, 0.45%),        19.71ms (23.33%, 2.96%),          2.51ms (3.26%, 0.95%),        17.20ms (36.49%, 4.27%)
+StackPushV2                           0B (0.00%, 0.00%),        18.61ms (20.38%, 2.79%),             0us (2.31%, 0.00%),        18.61ms (32.22%, 4.62%)
+ApplyAdam                             0B (0.00%, 0.00%),        16.67ms (17.59%, 2.50%),           796us (2.31%, 0.30%),        15.86ms (27.60%, 3.94%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.82KB (0.90%, 0.00%),        12.46ms (15.09%, 1.87%),             5us (2.01%, 0.00%),        12.45ms (23.66%, 3.09%)
+StackPopV2                            0B (0.00%, 0.00%),        10.01ms (13.22%, 1.50%),             0us (2.01%, 0.00%),        10.01ms (20.56%, 2.49%)
+Shape                            33.86KB (0.90%, 0.00%),         9.75ms (11.72%, 1.46%),             0us (2.01%, 0.00%),         9.75ms (18.07%, 2.42%)
+TensorArrayGradV3               216.94KB (0.90%, 0.00%),         7.13ms (10.26%, 1.07%),             0us (2.01%, 0.00%),         7.13ms (15.65%, 1.77%)
+MatMul                           42.28MB (0.90%, 0.23%),          7.03ms (9.19%, 1.05%),          2.40ms (2.01%, 0.91%),         4.61ms (13.88%, 1.14%)
+Reshape                             307B (0.67%, 0.00%),          6.82ms (8.14%, 1.02%),             0us (1.10%, 0.00%),         6.82ms (12.74%, 1.70%)
+Sub                              41.47KB (0.67%, 0.00%),          4.70ms (7.11%, 0.71%),           784us (1.10%, 0.30%),         3.92ms (11.04%, 0.97%)
+Neg                              40.72MB (0.67%, 0.22%),          4.41ms (6.41%, 0.66%),           631us (0.80%, 0.24%),         3.77ms (10.07%, 0.94%)
+BroadcastGradientArgs             4.91KB (0.45%, 0.00%),          3.86ms (5.75%, 0.58%),             0us (0.57%, 0.00%),          3.86ms (9.13%, 0.96%)
+Merge                             3.09KB (0.45%, 0.00%),          2.89ms (5.17%, 0.43%),             0us (0.57%, 0.00%),          2.89ms (8.17%, 0.72%)
+StackV2                          14.02KB (0.45%, 0.00%),          2.76ms (4.73%, 0.41%),             0us (0.57%, 0.00%),          2.76ms (7.45%, 0.69%)
+ExpandDims                            0B (0.00%, 0.00%),          2.44ms (4.32%, 0.37%),             0us (0.57%, 0.00%),          2.44ms (6.77%, 0.61%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.33ms (3.95%, 0.35%),             0us (0.57%, 0.00%),          2.33ms (6.16%, 0.58%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.19ms (3.60%, 0.33%),           233us (0.57%, 0.09%),          1.95ms (5.58%, 0.49%)
+Pack                              8.56KB (0.45%, 0.00%),          2.05ms (3.28%, 0.31%),             4us (0.48%, 0.00%),          2.04ms (5.10%, 0.51%)
+NextIteration                         0B (0.00%, 0.00%),          2.00ms (2.97%, 0.30%),             0us (0.48%, 0.00%),          2.00ms (4.59%, 0.50%)
+L2Loss                           20.57KB (0.45%, 0.00%),          1.75ms (2.67%, 0.26%),           228us (0.48%, 0.09%),          1.49ms (4.09%, 0.37%)
+Switch                                0B (0.00%, 0.00%),          1.72ms (2.41%, 0.26%),             0us (0.39%, 0.00%),          1.72ms (3.72%, 0.43%)
+CheckNumerics                     1.23KB (0.45%, 0.00%),          1.61ms (2.15%, 0.24%),             0us (0.39%, 0.00%),          1.61ms (3.29%, 0.40%)
+StridedSlice                      4.71KB (0.45%, 0.00%),          1.51ms (1.91%, 0.23%),             0us (0.39%, 0.00%),          1.51ms (2.89%, 0.38%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.25ms (1.68%, 0.19%),             0us (0.39%, 0.00%),          1.25ms (2.52%, 0.31%)
+Const                             2.94KB (0.45%, 0.00%),          1.01ms (1.49%, 0.15%),             0us (0.39%, 0.00%),          1.01ms (2.21%, 0.25%)
+RealDiv                          66.35KB (0.45%, 0.00%),           868us (1.34%, 0.13%),           130us (0.39%, 0.05%),           727us (1.96%, 0.18%)
+GreaterEqual                     15.01KB (0.45%, 0.00%),           640us (1.21%, 0.10%),             0us (0.34%, 0.00%),           640us (1.78%, 0.16%)
+OneHot                           40.60MB (0.45%, 0.22%),           607us (1.12%, 0.09%),           226us (0.34%, 0.09%),           380us (1.62%, 0.09%)
+VariableV2                        1.93MB (0.23%, 0.01%),           596us (1.03%, 0.09%),             0us (0.26%, 0.00%),           596us (1.52%, 0.15%)
+TanhGrad                              0B (0.00%, 0.00%),           573us (0.94%, 0.09%),            94us (0.26%, 0.04%),           470us (1.37%, 0.12%)
+Less                             30.51KB (0.22%, 0.00%),           563us (0.85%, 0.08%),             0us (0.22%, 0.00%),           563us (1.26%, 0.14%)
+Tanh                                  0B (0.00%, 0.00%),           546us (0.77%, 0.08%),            69us (0.22%, 0.03%),           467us (1.12%, 0.12%)
+Fill                             40.27MB (0.22%, 0.22%),           472us (0.68%, 0.07%),            65us (0.19%, 0.02%),           406us (1.00%, 0.10%)
+Enter                                 0B (0.00%, 0.00%),           452us (0.61%, 0.07%),             0us (0.17%, 0.00%),           452us (0.90%, 0.11%)
+SparseSoftmaxCrossEntropyWithLogits           921B (0.00%, 0.00%),           381us (0.55%, 0.06%),           210us (0.17%, 0.08%),           170us (0.79%, 0.04%)
+Mean                              2.46KB (0.00%, 0.00%),           334us (0.49%, 0.05%),            36us (0.09%, 0.01%),           293us (0.75%, 0.07%)
+Cast                              2.46KB (0.00%, 0.00%),           301us (0.44%, 0.05%),            26us (0.08%, 0.01%),           271us (0.67%, 0.07%)
+Tile                             96.46KB (0.00%, 0.00%),           282us (0.39%, 0.04%),            39us (0.07%, 0.01%),           240us (0.61%, 0.06%)
+DynamicStitch                     1.84KB (0.00%, 0.00%),           269us (0.35%, 0.04%),            43us (0.05%, 0.02%),           224us (0.55%, 0.06%)
+InvertPermutation                     0B (0.00%, 0.00%),           203us (0.31%, 0.03%),             0us (0.03%, 0.00%),           203us (0.49%, 0.05%)
+Identity                              0B (0.00%, 0.00%),           202us (0.28%, 0.03%),             0us (0.03%, 0.00%),           202us (0.44%, 0.05%)
+LoopCond                              0B (0.00%, 0.00%),           196us (0.25%, 0.03%),             0us (0.03%, 0.00%),           196us (0.39%, 0.05%)
+SquaredDifference                41.47KB (0.00%, 0.00%),           140us (0.22%, 0.02%),            23us (0.03%, 0.01%),           116us (0.34%, 0.03%)
+Sqrt                                  0B (0.00%, 0.00%),           134us (0.20%, 0.02%),            15us (0.03%, 0.01%),           117us (0.31%, 0.03%)
+TensorArrayV3                     4.37KB (0.00%, 0.00%),           132us (0.18%, 0.02%),             0us (0.02%, 0.00%),           132us (0.28%, 0.03%)
+ControlTrigger                        0B (0.00%, 0.00%),           124us (0.16%, 0.02%),             0us (0.02%, 0.00%),           124us (0.25%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),           108us (0.14%, 0.02%),            14us (0.02%, 0.01%),            93us (0.22%, 0.02%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),           105us (0.12%, 0.02%),             0us (0.02%, 0.00%),           105us (0.20%, 0.03%)
+FloorDiv                          1.84KB (0.00%, 0.00%),            83us (0.11%, 0.01%),             0us (0.02%, 0.00%),            83us (0.17%, 0.02%)
+Maximum                              18B (0.00%, 0.00%),            79us (0.10%, 0.01%),             0us (0.02%, 0.00%),            79us (0.15%, 0.02%)
+ArgMax                              307B (0.00%, 0.00%),            77us (0.08%, 0.01%),            30us (0.02%, 0.01%),            47us (0.13%, 0.01%)
+Assign                                0B (0.00%, 0.00%),            73us (0.07%, 0.01%),             0us (0.00%, 0.00%),            73us (0.12%, 0.02%)
+Prod                                355B (0.00%, 0.00%),            73us (0.06%, 0.01%),             0us (0.00%, 0.00%),            73us (0.10%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            70us (0.05%, 0.01%),             3us (0.00%, 0.00%),            67us (0.08%, 0.02%)
+IsNan                               307B (0.00%, 0.00%),            64us (0.04%, 0.01%),             3us (0.00%, 0.00%),            60us (0.07%, 0.01%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            54us (0.03%, 0.01%),             4us (0.00%, 0.00%),            49us (0.05%, 0.01%)
+Range                             2.35KB (0.00%, 0.00%),            38us (0.02%, 0.01%),             0us (0.00%, 0.00%),            38us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            29us (0.02%, 0.00%),             0us (0.00%, 0.00%),            29us (0.03%, 0.01%)
+Equal                               614B (0.00%, 0.00%),            27us (0.01%, 0.00%),             0us (0.00%, 0.00%),            27us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            21us (0.01%, 0.00%),             0us (0.00%, 0.00%),            21us (0.01%, 0.01%)
+All                                   0B (0.00%, 0.00%),            15us (0.01%, 0.00%),             0us (0.00%, 0.00%),            15us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.01%, 0.00%)
+Assert                                0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.00%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           307B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+
+======================End of Report==========================
+   2: cost=5.2008, accuracy= 0.0000, norm=26.494, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=53)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 4124.07MB (100.00%, 21.21%),     128.53ms (100.00%, 19.93%),      87.06ms (100.00%, 31.50%),      41.47ms (100.00%, 11.26%)
+Transpose                    5446.65MB (78.79%, 28.01%),      101.42ms (80.07%, 15.73%),       41.42ms (68.50%, 14.99%),       59.98ms (88.74%, 16.29%)
+Mul                          5587.21MB (50.78%, 28.73%),       93.09ms (64.34%, 14.44%),       51.97ms (53.51%, 18.80%),       41.06ms (72.44%, 11.15%)
+Sum                             39.81MB (22.05%, 0.20%),        48.96ms (49.90%, 7.59%),        18.41ms (34.71%, 6.66%),        30.53ms (61.29%, 8.29%)
+Add                           1311.86MB (21.84%, 6.75%),        34.49ms (42.31%, 5.35%),        20.47ms (28.05%, 7.41%),        14.00ms (53.00%, 3.80%)
+AddN                                  0B (0.00%, 0.00%),        29.76ms (36.96%, 4.61%),        20.39ms (20.64%, 7.38%),         9.35ms (49.19%, 2.54%)
+Select                        1324.97MB (15.09%, 6.81%),        29.05ms (32.34%, 4.51%),        24.07ms (13.26%, 8.71%),         4.98ms (46.66%, 1.35%)
+TensorArrayGatherV3              62.49MB (8.28%, 0.32%),        19.32ms (27.84%, 3.00%),           823us (4.55%, 0.30%),        18.49ms (45.30%, 5.02%)
+StackPushV2                           0B (0.00%, 0.00%),        18.25ms (24.84%, 2.83%),             0us (4.26%, 0.00%),        18.25ms (40.28%, 4.96%)
+TensorArrayScatterV3             79.46MB (7.96%, 0.41%),        16.40ms (22.01%, 2.54%),          2.39ms (4.26%, 0.86%),        14.01ms (35.32%, 3.81%)
+ZerosLike                      1305.34MB (7.55%, 6.71%),        16.09ms (19.47%, 2.50%),          3.46ms (3.39%, 1.25%),        12.63ms (31.52%, 3.43%)
+ApplyAdam                             0B (0.00%, 0.00%),        12.65ms (16.97%, 1.96%),           743us (2.14%, 0.27%),        11.88ms (28.08%, 3.23%)
+StackPopV2                            0B (0.00%, 0.00%),        10.57ms (15.01%, 1.64%),             0us (1.87%, 0.00%),        10.57ms (24.86%, 2.87%)
+Shape                            35.49KB (0.84%, 0.00%),        10.25ms (13.37%, 1.59%),             0us (1.87%, 0.00%),        10.25ms (21.99%, 2.78%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.16KB (0.84%, 0.00%),         8.91ms (11.78%, 1.38%),             4us (1.87%, 0.00%),         8.91ms (19.20%, 2.42%)
+Reshape                             292B (0.84%, 0.00%),         7.01ms (10.40%, 1.09%),             0us (1.87%, 0.00%),         7.01ms (16.78%, 1.90%)
+TensorArrayGradV3               228.79KB (0.84%, 0.00%),          6.37ms (9.31%, 0.99%),             0us (1.87%, 0.00%),         6.37ms (14.88%, 1.73%)
+MatMul                           40.22MB (0.84%, 0.21%),          6.15ms (8.33%, 0.95%),          2.26ms (1.87%, 0.82%),         3.86ms (13.15%, 1.05%)
+Sub                              39.49KB (0.63%, 0.00%),          4.93ms (7.37%, 0.76%),           816us (1.05%, 0.30%),         4.11ms (12.10%, 1.12%)
+Neg                              43.05MB (0.63%, 0.22%),          4.59ms (6.61%, 0.71%),           647us (0.75%, 0.23%),         3.94ms (10.99%, 1.07%)
+BroadcastGradientArgs             5.17KB (0.41%, 0.00%),          3.98ms (5.89%, 0.62%),             0us (0.52%, 0.00%),          3.98ms (9.91%, 1.08%)
+Merge                             3.26KB (0.41%, 0.00%),          3.00ms (5.28%, 0.47%),             0us (0.52%, 0.00%),          3.00ms (8.83%, 0.82%)
+ExpandDims                            0B (0.00%, 0.00%),          2.56ms (4.81%, 0.40%),             0us (0.52%, 0.00%),          2.56ms (8.02%, 0.69%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.41ms (4.42%, 0.37%),             0us (0.52%, 0.00%),          2.41ms (7.32%, 0.65%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.33ms (4.04%, 0.36%),           242us (0.52%, 0.09%),          2.09ms (6.67%, 0.57%)
+StackV2                          13.33KB (0.41%, 0.00%),          2.12ms (3.68%, 0.33%),             0us (0.43%, 0.00%),          2.12ms (6.10%, 0.58%)
+Pack                              8.59KB (0.41%, 0.00%),          2.11ms (3.35%, 0.33%),             4us (0.43%, 0.00%),          2.11ms (5.53%, 0.57%)
+NextIteration                         0B (0.00%, 0.00%),          2.05ms (3.02%, 0.32%),             0us (0.43%, 0.00%),          2.05ms (4.95%, 0.56%)
+Switch                                0B (0.00%, 0.00%),          1.78ms (2.70%, 0.28%),             0us (0.43%, 0.00%),          1.78ms (4.39%, 0.48%)
+L2Loss                           19.57KB (0.41%, 0.00%),          1.63ms (2.43%, 0.25%),           220us (0.43%, 0.08%),          1.39ms (3.91%, 0.38%)
+CheckNumerics                     1.17KB (0.41%, 0.00%),          1.55ms (2.18%, 0.24%),             0us (0.35%, 0.00%),          1.55ms (3.53%, 0.42%)
+StridedSlice                      4.58KB (0.41%, 0.00%),          1.55ms (1.93%, 0.24%),             0us (0.35%, 0.00%),          1.55ms (3.11%, 0.42%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.31ms (1.69%, 0.20%),             0us (0.35%, 0.00%),          1.31ms (2.69%, 0.36%)
+Const                             2.80KB (0.41%, 0.00%),          1.08ms (1.49%, 0.17%),             0us (0.35%, 0.00%),          1.08ms (2.33%, 0.29%)
+RealDiv                          63.19KB (0.41%, 0.00%),           837us (1.32%, 0.13%),           119us (0.35%, 0.04%),           702us (2.04%, 0.19%)
+GreaterEqual                     15.86KB (0.41%, 0.00%),           671us (1.19%, 0.10%),             0us (0.31%, 0.00%),           671us (1.85%, 0.18%)
+Less                             32.18KB (0.41%, 0.00%),           582us (1.09%, 0.09%),             0us (0.31%, 0.00%),           582us (1.67%, 0.16%)
+VariableV2                        1.84MB (0.41%, 0.01%),           570us (1.00%, 0.09%),             0us (0.31%, 0.00%),           570us (1.51%, 0.15%)
+TanhGrad                              0B (0.00%, 0.00%),           534us (0.91%, 0.08%),            87us (0.31%, 0.03%),           436us (1.36%, 0.12%)
+OneHot                           38.66MB (0.40%, 0.20%),           513us (0.83%, 0.08%),           215us (0.28%, 0.08%),           296us (1.24%, 0.08%)
+Tanh                                  0B (0.00%, 0.00%),           507us (0.75%, 0.08%),            66us (0.20%, 0.02%),           435us (1.16%, 0.12%)
+Enter                                 0B (0.00%, 0.00%),           441us (0.67%, 0.07%),             0us (0.17%, 0.00%),           441us (1.04%, 0.12%)
+Fill                             38.35MB (0.20%, 0.20%),           366us (0.60%, 0.06%),            62us (0.17%, 0.02%),           303us (0.92%, 0.08%)
+SparseSoftmaxCrossEntropyWithLogits           877B (0.00%, 0.00%),           360us (0.55%, 0.06%),           198us (0.15%, 0.07%),           162us (0.84%, 0.04%)
+Mean                              2.34KB (0.00%, 0.00%),           317us (0.49%, 0.05%),            36us (0.08%, 0.01%),           280us (0.79%, 0.08%)
+Cast                              2.34KB (0.00%, 0.00%),           285us (0.44%, 0.04%),            26us (0.07%, 0.01%),           255us (0.72%, 0.07%)
+Tile                             91.86KB (0.00%, 0.00%),           267us (0.40%, 0.04%),            35us (0.06%, 0.01%),           229us (0.65%, 0.06%)
+DynamicStitch                     1.75KB (0.00%, 0.00%),           256us (0.36%, 0.04%),            39us (0.05%, 0.01%),           213us (0.59%, 0.06%)
+InvertPermutation                     0B (0.00%, 0.00%),           215us (0.32%, 0.03%),             0us (0.03%, 0.00%),           215us (0.53%, 0.06%)
+Identity                              0B (0.00%, 0.00%),           212us (0.28%, 0.03%),             0us (0.03%, 0.00%),           212us (0.47%, 0.06%)
+LoopCond                              0B (0.00%, 0.00%),           206us (0.25%, 0.03%),             0us (0.03%, 0.00%),           206us (0.41%, 0.06%)
+SquaredDifference                39.49KB (0.00%, 0.00%),           135us (0.22%, 0.02%),            21us (0.03%, 0.01%),           112us (0.36%, 0.03%)
+ControlTrigger                        0B (0.00%, 0.00%),           128us (0.20%, 0.02%),             0us (0.02%, 0.00%),           128us (0.32%, 0.03%)
+Sqrt                                  0B (0.00%, 0.00%),           126us (0.18%, 0.02%),            15us (0.02%, 0.01%),           111us (0.29%, 0.03%)
+TensorArrayV3                     4.16KB (0.00%, 0.00%),           124us (0.16%, 0.02%),             0us (0.02%, 0.00%),           124us (0.26%, 0.03%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),           110us (0.14%, 0.02%),             0us (0.02%, 0.00%),           110us (0.23%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),           100us (0.12%, 0.02%),            13us (0.02%, 0.00%),            86us (0.20%, 0.02%)
+FloorDiv                          1.75KB (0.00%, 0.00%),            76us (0.11%, 0.01%),             0us (0.01%, 0.00%),            76us (0.17%, 0.02%)
+Maximum                              18B (0.00%, 0.00%),            74us (0.09%, 0.01%),             0us (0.01%, 0.00%),            74us (0.15%, 0.02%)
+ArgMax                              292B (0.00%, 0.00%),            72us (0.08%, 0.01%),            28us (0.01%, 0.01%),            44us (0.13%, 0.01%)
+Prod                                340B (0.00%, 0.00%),            72us (0.07%, 0.01%),             0us (0.00%, 0.00%),            72us (0.12%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            67us (0.06%, 0.01%),             0us (0.00%, 0.00%),            67us (0.10%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            65us (0.05%, 0.01%),             3us (0.00%, 0.00%),            61us (0.08%, 0.02%)
+IsNan                               292B (0.00%, 0.00%),            60us (0.04%, 0.01%),             3us (0.00%, 0.00%),            56us (0.07%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            47us (0.03%, 0.01%),             4us (0.00%, 0.00%),            42us (0.05%, 0.01%)
+Range                             2.24KB (0.00%, 0.00%),            36us (0.02%, 0.01%),             0us (0.00%, 0.00%),            36us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.03%, 0.01%)
+Equal                               584B (0.00%, 0.00%),            24us (0.01%, 0.00%),             0us (0.00%, 0.00%),            24us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            18us (0.01%, 0.00%),             0us (0.00%, 0.00%),            18us (0.02%, 0.00%)
+All                                   0B (0.00%, 0.00%),            13us (0.01%, 0.00%),             0us (0.00%, 0.00%),            13us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum_1/Mul_grad/BroadcastGradientArgs-bcastargs-0             0B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+Assert                                0B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           292B (0.00%, 0.00%),             5us (0.00%, 0.00%),             0us (0.00%, 0.00%),             5us (0.00%, 0.00%)
+
+======================End of Report==========================
+   3: cost=5.2097, accuracy= 0.0000, norm=38.743, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=42)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 3609.79MB (100.00%, 21.16%),     112.73ms (100.00%, 20.16%),      76.31ms (100.00%, 31.44%),      36.41ms (100.00%, 11.51%)
+Transpose                    4773.68MB (78.84%, 27.99%),       84.37ms (79.84%, 15.09%),       36.37ms (68.56%, 14.98%),       47.99ms (88.49%, 15.17%)
+Mul                          4893.53MB (50.85%, 28.69%),       81.56ms (64.76%, 14.58%),       45.43ms (53.58%, 18.72%),       36.08ms (73.32%, 11.41%)
+Sum                             34.88MB (22.16%, 0.20%),        42.81ms (50.17%, 7.66%),        16.10ms (34.86%, 6.63%),        26.69ms (61.91%, 8.44%)
+Add                           1146.34MB (21.95%, 6.72%),        30.19ms (42.52%, 5.40%),        17.85ms (28.23%, 7.35%),        12.32ms (53.47%, 3.90%)
+AddN                                  0B (0.00%, 0.00%),        25.98ms (37.12%, 4.65%),        17.81ms (20.88%, 7.34%),         8.16ms (49.57%, 2.58%)
+Select                        1158.52MB (15.23%, 6.79%),        25.36ms (32.47%, 4.53%),        21.01ms (13.54%, 8.65%),         4.35ms (46.99%, 1.37%)
+TensorArrayGatherV3              70.84MB (8.44%, 0.42%),        16.54ms (27.94%, 2.96%),           922us (4.89%, 0.38%),        15.62ms (45.62%, 4.94%)
+StackPushV2                           0B (0.00%, 0.00%),        15.69ms (24.98%, 2.81%),             0us (4.51%, 0.00%),        15.69ms (40.68%, 4.96%)
+TensorArrayScatterV3             77.25MB (8.03%, 0.45%),        14.94ms (22.18%, 2.67%),          2.32ms (4.51%, 0.96%),        12.62ms (35.72%, 3.99%)
+ZerosLike                      1137.78MB (7.57%, 6.67%),        13.01ms (19.51%, 2.33%),          3.02ms (3.55%, 1.24%),         9.99ms (31.73%, 3.16%)
+ApplyAdam                             0B (0.00%, 0.00%),        10.42ms (17.18%, 1.86%),           727us (2.31%, 0.30%),         9.67ms (28.57%, 3.06%)
+StackPopV2                            0B (0.00%, 0.00%),         9.19ms (15.32%, 1.64%),             0us (2.01%, 0.00%),         9.19ms (25.51%, 2.91%)
+Shape                            31.19KB (0.90%, 0.00%),         9.06ms (13.67%, 1.62%),             0us (2.01%, 0.00%),         9.06ms (22.61%, 2.86%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        12.80KB (0.90%, 0.00%),         6.94ms (12.05%, 1.24%),             4us (2.01%, 0.00%),         6.94ms (19.74%, 2.19%)
+Reshape                             284B (0.90%, 0.00%),         6.14ms (10.81%, 1.10%),             0us (2.01%, 0.00%),         6.14ms (17.55%, 1.94%)
+MatMul                           39.22MB (0.90%, 0.23%),          5.90ms (9.71%, 1.05%),          2.21ms (2.01%, 0.91%),         3.67ms (15.61%, 1.16%)
+TensorArrayGradV3               199.79KB (0.67%, 0.00%),          5.51ms (8.66%, 0.98%),             0us (1.10%, 0.00%),         5.51ms (14.45%, 1.74%)
+Sub                              38.40KB (0.67%, 0.00%),          4.35ms (7.68%, 0.78%),           717us (1.10%, 0.30%),         3.62ms (12.71%, 1.15%)
+Neg                              37.52MB (0.67%, 0.22%),          4.02ms (6.90%, 0.72%),           572us (0.80%, 0.24%),         3.45ms (11.56%, 1.09%)
+BroadcastGradientArgs             4.52KB (0.45%, 0.00%),          3.49ms (6.18%, 0.62%),             0us (0.57%, 0.00%),         3.49ms (10.47%, 1.10%)
+Merge                             2.85KB (0.45%, 0.00%),          2.62ms (5.55%, 0.47%),             0us (0.57%, 0.00%),          2.62ms (9.37%, 0.83%)
+ExpandDims                            0B (0.00%, 0.00%),          2.25ms (5.09%, 0.40%),             0us (0.57%, 0.00%),          2.25ms (8.54%, 0.71%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.09ms (4.68%, 0.37%),             0us (0.57%, 0.00%),          2.09ms (7.82%, 0.66%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.05ms (4.31%, 0.37%),           212us (0.57%, 0.09%),          1.84ms (7.16%, 0.58%)
+StackV2                          12.99KB (0.45%, 0.00%),          1.97ms (3.94%, 0.35%),             0us (0.48%, 0.00%),          1.97ms (6.58%, 0.62%)
+Pack                              7.91KB (0.45%, 0.00%),          1.89ms (3.59%, 0.34%),             4us (0.48%, 0.00%),          1.89ms (5.96%, 0.60%)
+NextIteration                         0B (0.00%, 0.00%),          1.78ms (3.25%, 0.32%),             0us (0.48%, 0.00%),          1.78ms (5.36%, 0.56%)
+L2Loss                           19.04KB (0.45%, 0.00%),          1.56ms (2.94%, 0.28%),           214us (0.48%, 0.09%),          1.32ms (4.80%, 0.42%)
+Switch                                0B (0.00%, 0.00%),          1.55ms (2.66%, 0.28%),             0us (0.39%, 0.00%),          1.55ms (4.38%, 0.49%)
+CheckNumerics                     1.14KB (0.45%, 0.00%),          1.51ms (2.38%, 0.27%),             0us (0.39%, 0.00%),          1.51ms (3.89%, 0.48%)
+StridedSlice                      4.36KB (0.45%, 0.00%),          1.40ms (2.11%, 0.25%),             0us (0.39%, 0.00%),          1.40ms (3.41%, 0.44%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.15ms (1.86%, 0.21%),             0us (0.39%, 0.00%),          1.15ms (2.97%, 0.36%)
+Const                             2.72KB (0.45%, 0.00%),          1.04ms (1.65%, 0.19%),             0us (0.39%, 0.00%),          1.04ms (2.61%, 0.33%)
+RealDiv                          59.16KB (0.45%, 0.00%),           826us (1.47%, 0.15%),           117us (0.39%, 0.05%),           695us (2.28%, 0.22%)
+VariableV2                        1.79MB (0.45%, 0.01%),           625us (1.32%, 0.11%),             0us (0.34%, 0.00%),           625us (2.06%, 0.20%)
+GreaterEqual                     13.82KB (0.44%, 0.00%),           587us (1.21%, 0.10%),             0us (0.34%, 0.00%),           587us (1.86%, 0.19%)
+Tanh                                  0B (0.00%, 0.00%),           517us (1.10%, 0.09%),            65us (0.34%, 0.03%),           447us (1.68%, 0.14%)
+Less                             28.10KB (0.44%, 0.00%),           513us (1.01%, 0.09%),             0us (0.32%, 0.00%),           513us (1.53%, 0.16%)
+TanhGrad                              0B (0.00%, 0.00%),           509us (0.92%, 0.09%),            86us (0.32%, 0.04%),           418us (1.37%, 0.13%)
+Enter                                 0B (0.00%, 0.00%),           482us (0.83%, 0.09%),             0us (0.28%, 0.00%),           482us (1.24%, 0.15%)
+OneHot                           37.59MB (0.44%, 0.22%),           470us (0.74%, 0.08%),           209us (0.28%, 0.09%),           260us (1.09%, 0.08%)
+SparseSoftmaxCrossEntropyWithLogits           853B (0.22%, 0.00%),           352us (0.66%, 0.06%),           194us (0.19%, 0.08%),           158us (1.01%, 0.05%)
+Fill                             37.28MB (0.22%, 0.22%),           312us (0.59%, 0.06%),            60us (0.11%, 0.02%),           251us (0.96%, 0.08%)
+Mean                              2.27KB (0.00%, 0.00%),           310us (0.54%, 0.06%),            36us (0.09%, 0.01%),           274us (0.88%, 0.09%)
+Cast                              2.27KB (0.00%, 0.00%),           279us (0.48%, 0.05%),            25us (0.07%, 0.01%),           252us (0.79%, 0.08%)
+Tile                             86.92KB (0.00%, 0.00%),           260us (0.43%, 0.05%),            35us (0.06%, 0.01%),           222us (0.71%, 0.07%)
+DynamicStitch                     1.70KB (0.00%, 0.00%),           248us (0.39%, 0.04%),            38us (0.05%, 0.02%),           205us (0.64%, 0.06%)
+Identity                              0B (0.00%, 0.00%),           209us (0.34%, 0.04%),             0us (0.03%, 0.00%),           209us (0.57%, 0.07%)
+InvertPermutation                     0B (0.00%, 0.00%),           188us (0.30%, 0.03%),             0us (0.03%, 0.00%),           188us (0.51%, 0.06%)
+LoopCond                              0B (0.00%, 0.00%),           181us (0.27%, 0.03%),             0us (0.03%, 0.00%),           181us (0.45%, 0.06%)
+SquaredDifference                38.40KB (0.00%, 0.00%),           136us (0.24%, 0.02%),            20us (0.03%, 0.01%),           114us (0.39%, 0.04%)
+TensorArrayV3                     4.04KB (0.00%, 0.00%),           124us (0.21%, 0.02%),             0us (0.03%, 0.00%),           124us (0.36%, 0.04%)
+Sqrt                                  0B (0.00%, 0.00%),           122us (0.19%, 0.02%),            14us (0.03%, 0.01%),           106us (0.32%, 0.03%)
+ControlTrigger                        0B (0.00%, 0.00%),           113us (0.17%, 0.02%),             0us (0.02%, 0.00%),           113us (0.28%, 0.04%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),            96us (0.15%, 0.02%),             0us (0.02%, 0.00%),            96us (0.25%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),            96us (0.13%, 0.02%),            13us (0.02%, 0.01%),            82us (0.22%, 0.03%)
+FloorDiv                          1.70KB (0.00%, 0.00%),            74us (0.11%, 0.01%),             0us (0.02%, 0.00%),            74us (0.19%, 0.02%)
+Maximum                              16B (0.00%, 0.00%),            74us (0.10%, 0.01%),             0us (0.02%, 0.00%),            74us (0.17%, 0.02%)
+ArgMax                              284B (0.00%, 0.00%),            71us (0.09%, 0.01%),            27us (0.02%, 0.01%),            43us (0.14%, 0.01%)
+Prod                                332B (0.00%, 0.00%),            69us (0.08%, 0.01%),             0us (0.00%, 0.00%),            69us (0.13%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            63us (0.06%, 0.01%),             0us (0.00%, 0.00%),            63us (0.11%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            61us (0.05%, 0.01%),             3us (0.00%, 0.00%),            58us (0.09%, 0.02%)
+IsNan                               284B (0.00%, 0.00%),            58us (0.04%, 0.01%),             3us (0.00%, 0.00%),            54us (0.07%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            43us (0.03%, 0.01%),             4us (0.00%, 0.00%),            39us (0.05%, 0.01%)
+Range                             2.18KB (0.00%, 0.00%),            38us (0.02%, 0.01%),             0us (0.00%, 0.00%),            38us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.03%, 0.01%)
+Equal                               568B (0.00%, 0.00%),            22us (0.01%, 0.00%),             0us (0.00%, 0.00%),            22us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            16us (0.01%, 0.00%),             0us (0.00%, 0.00%),            16us (0.01%, 0.01%)
+All                                   0B (0.00%, 0.00%),            13us (0.01%, 0.00%),             0us (0.00%, 0.00%),            13us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             8us (0.00%, 0.00%),             0us (0.00%, 0.00%),             8us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           284B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.00%, 0.00%)
+
+======================End of Report==========================
+   4: cost=5.2256, accuracy= 0.0000, norm=10.996, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=66)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 4176.98MB (100.00%, 21.19%),     130.12ms (100.00%, 20.96%),      88.23ms (100.00%, 31.48%),      41.89ms (100.00%, 12.31%)
+Mul                          5657.99MB (78.81%, 28.71%),       94.25ms (79.04%, 15.18%),       52.62ms (68.52%, 18.78%),       41.58ms (87.69%, 12.22%)
+Transpose                    5518.47MB (50.10%, 28.00%),       87.96ms (63.85%, 14.17%),       41.99ms (49.74%, 14.98%),       45.96ms (75.47%, 13.51%)
+Sum                             40.24MB (22.09%, 0.20%),        49.43ms (49.68%, 7.96%),        18.63ms (34.76%, 6.65%),        30.77ms (61.96%, 9.04%)
+Add                           1327.65MB (21.89%, 6.74%),        34.90ms (41.72%, 5.62%),        20.70ms (28.11%, 7.39%),        14.18ms (52.92%, 4.17%)
+AddN                                  0B (0.00%, 0.00%),        30.06ms (36.10%, 4.84%),        20.64ms (20.72%, 7.37%),         9.41ms (48.75%, 2.77%)
+Select                        1340.55MB (15.15%, 6.80%),        29.38ms (31.26%, 4.73%),        24.36ms (13.35%, 8.69%),         5.02ms (45.98%, 1.48%)
+StackPushV2                           0B (0.00%, 0.00%),        17.27ms (26.52%, 2.78%),             0us (4.66%, 0.00%),        17.27ms (44.51%, 5.07%)
+TensorArrayGatherV3              72.13MB (8.35%, 0.37%),        15.32ms (23.74%, 2.47%),           907us (4.66%, 0.32%),        14.41ms (39.43%, 4.24%)
+TensorArrayScatterV3             83.43MB (7.99%, 0.42%),        15.06ms (21.27%, 2.43%),          2.51ms (4.34%, 0.90%),        12.55ms (35.20%, 3.69%)
+ZerosLike                      1320.97MB (7.56%, 6.70%),        12.88ms (18.85%, 2.08%),          3.50ms (3.44%, 1.25%),         9.38ms (31.51%, 2.76%)
+StackPopV2                            0B (0.00%, 0.00%),        10.66ms (16.77%, 1.72%),             0us (2.19%, 0.00%),        10.66ms (28.75%, 3.13%)
+Shape                            35.99KB (0.86%, 0.00%),        10.33ms (15.05%, 1.66%),             0us (2.19%, 0.00%),        10.33ms (25.62%, 3.04%)
+ApplyAdam                             0B (0.00%, 0.00%),         9.89ms (13.39%, 1.59%),           780us (2.19%, 0.28%),         9.08ms (22.58%, 2.67%)
+Reshape                             307B (0.86%, 0.00%),         7.01ms (11.80%, 1.13%),             0us (1.92%, 0.00%),         7.01ms (19.91%, 2.06%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.82KB (0.86%, 0.00%),         6.25ms (10.67%, 1.01%),             5us (1.92%, 0.00%),         6.25ms (17.85%, 1.84%)
+MatMul                           42.31MB (0.86%, 0.21%),          6.09ms (9.66%, 0.98%),          2.38ms (1.91%, 0.85%),         3.68ms (16.02%, 1.08%)
+TensorArrayGradV3               231.50KB (0.64%, 0.00%),          5.86ms (8.68%, 0.94%),             0us (1.06%, 0.00%),         5.86ms (14.93%, 1.72%)
+Sub                              41.47KB (0.64%, 0.00%),          5.00ms (7.74%, 0.80%),           829us (1.06%, 0.30%),         4.16ms (13.21%, 1.22%)
+Neg                              43.54MB (0.64%, 0.22%),          4.64ms (6.93%, 0.75%),           653us (0.77%, 0.23%),         3.98ms (11.99%, 1.17%)
+BroadcastGradientArgs             5.23KB (0.42%, 0.00%),          4.01ms (6.18%, 0.65%),             0us (0.54%, 0.00%),         4.01ms (10.82%, 1.18%)
+Merge                             3.30KB (0.42%, 0.00%),          3.01ms (5.54%, 0.49%),             0us (0.54%, 0.00%),          3.01ms (9.64%, 0.89%)
+ExpandDims                            0B (0.00%, 0.00%),          2.57ms (5.05%, 0.41%),             0us (0.54%, 0.00%),          2.57ms (8.75%, 0.76%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.41ms (4.64%, 0.39%),             0us (0.54%, 0.00%),          2.41ms (8.00%, 0.71%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.34ms (4.25%, 0.38%),           244us (0.54%, 0.09%),          2.09ms (7.29%, 0.62%)
+Pack                              8.85KB (0.42%, 0.00%),          2.13ms (3.87%, 0.34%),             4us (0.45%, 0.00%),          2.12ms (6.67%, 0.62%)
+NextIteration                         0B (0.00%, 0.00%),          2.04ms (3.53%, 0.33%),             0us (0.45%, 0.00%),          2.04ms (6.05%, 0.60%)
+StackV2                          14.02KB (0.42%, 0.00%),          1.87ms (3.20%, 0.30%),             0us (0.45%, 0.00%),          1.87ms (5.45%, 0.55%)
+Switch                                0B (0.00%, 0.00%),          1.79ms (2.90%, 0.29%),             0us (0.45%, 0.00%),          1.79ms (4.90%, 0.53%)
+L2Loss                           20.57KB (0.42%, 0.00%),          1.67ms (2.61%, 0.27%),           228us (0.45%, 0.08%),          1.42ms (4.37%, 0.42%)
+CheckNumerics                     1.23KB (0.42%, 0.00%),          1.65ms (2.34%, 0.27%),             0us (0.37%, 0.00%),          1.65ms (3.96%, 0.48%)
+StridedSlice                      4.77KB (0.42%, 0.00%),          1.58ms (2.08%, 0.25%),             0us (0.37%, 0.00%),          1.58ms (3.48%, 0.46%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.33ms (1.82%, 0.21%),             0us (0.37%, 0.00%),          1.33ms (3.01%, 0.39%)
+Const                             2.94KB (0.42%, 0.00%),          1.15ms (1.61%, 0.18%),             0us (0.37%, 0.00%),          1.15ms (2.62%, 0.34%)
+RealDiv                          64.31KB (0.42%, 0.00%),           883us (1.42%, 0.14%),           130us (0.37%, 0.05%),           744us (2.28%, 0.22%)
+GreaterEqual                     16.04KB (0.42%, 0.00%),           678us (1.28%, 0.11%),             0us (0.32%, 0.00%),           678us (2.06%, 0.20%)
+VariableV2                        1.93MB (0.42%, 0.01%),           668us (1.17%, 0.11%),             0us (0.32%, 0.00%),           668us (1.87%, 0.20%)
+Less                             32.56KB (0.41%, 0.00%),           584us (1.07%, 0.09%),             0us (0.32%, 0.00%),           584us (1.67%, 0.17%)
+TanhGrad                              0B (0.00%, 0.00%),           548us (0.97%, 0.09%),            93us (0.32%, 0.03%),           448us (1.50%, 0.13%)
+Tanh                                  0B (0.00%, 0.00%),           547us (0.88%, 0.09%),            68us (0.29%, 0.02%),           469us (1.37%, 0.14%)
+Enter                                 0B (0.00%, 0.00%),           511us (0.80%, 0.08%),             0us (0.26%, 0.00%),           511us (1.23%, 0.15%)
+OneHot                           40.60MB (0.41%, 0.21%),           477us (0.71%, 0.08%),           225us (0.26%, 0.08%),           251us (1.08%, 0.07%)
+SparseSoftmaxCrossEntropyWithLogits           921B (0.21%, 0.00%),           380us (0.64%, 0.06%),           210us (0.18%, 0.07%),           169us (1.00%, 0.05%)
+Mean                              2.46KB (0.21%, 0.00%),           333us (0.57%, 0.05%),            37us (0.11%, 0.01%),           291us (0.95%, 0.09%)
+Fill                             40.27MB (0.21%, 0.20%),           302us (0.52%, 0.05%),            65us (0.09%, 0.02%),           236us (0.87%, 0.07%)
+Cast                              2.46KB (0.00%, 0.00%),           299us (0.47%, 0.05%),            26us (0.07%, 0.01%),           270us (0.80%, 0.08%)
+Tile                             94.31KB (0.00%, 0.00%),           282us (0.42%, 0.05%),            37us (0.06%, 0.01%),           240us (0.72%, 0.07%)
+DynamicStitch                     1.84KB (0.00%, 0.00%),           265us (0.38%, 0.04%),            43us (0.05%, 0.02%),           221us (0.65%, 0.06%)
+Identity                              0B (0.00%, 0.00%),           230us (0.34%, 0.04%),             0us (0.03%, 0.00%),           230us (0.58%, 0.07%)
+InvertPermutation                     0B (0.00%, 0.00%),           219us (0.30%, 0.04%),             0us (0.03%, 0.00%),           219us (0.52%, 0.06%)
+LoopCond                              0B (0.00%, 0.00%),           209us (0.26%, 0.03%),             0us (0.03%, 0.00%),           209us (0.45%, 0.06%)
+SquaredDifference                41.47KB (0.00%, 0.00%),           146us (0.23%, 0.02%),            23us (0.03%, 0.01%),           122us (0.39%, 0.04%)
+Sqrt                                  0B (0.00%, 0.00%),           132us (0.21%, 0.02%),            15us (0.02%, 0.01%),           115us (0.36%, 0.03%)
+TensorArrayV3                     4.37KB (0.00%, 0.00%),           130us (0.19%, 0.02%),             0us (0.02%, 0.00%),           130us (0.32%, 0.04%)
+ControlTrigger                        0B (0.00%, 0.00%),           129us (0.16%, 0.02%),             0us (0.02%, 0.00%),           129us (0.28%, 0.04%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),           110us (0.14%, 0.02%),             0us (0.02%, 0.00%),           110us (0.25%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),           101us (0.13%, 0.02%),            13us (0.02%, 0.00%),            87us (0.21%, 0.03%)
+FloorDiv                          1.84KB (0.00%, 0.00%),            80us (0.11%, 0.01%),             0us (0.01%, 0.00%),            80us (0.19%, 0.02%)
+Maximum                              18B (0.00%, 0.00%),            79us (0.10%, 0.01%),             0us (0.01%, 0.00%),            79us (0.16%, 0.02%)
+ArgMax                              307B (0.00%, 0.00%),            75us (0.08%, 0.01%),            29us (0.01%, 0.01%),            46us (0.14%, 0.01%)
+Prod                                355B (0.00%, 0.00%),            72us (0.07%, 0.01%),             0us (0.00%, 0.00%),            72us (0.13%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            67us (0.06%, 0.01%),             0us (0.00%, 0.00%),            67us (0.11%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            64us (0.05%, 0.01%),             3us (0.00%, 0.00%),            60us (0.09%, 0.02%)
+IsNan                               307B (0.00%, 0.00%),            61us (0.04%, 0.01%),             3us (0.00%, 0.00%),            58us (0.07%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            45us (0.03%, 0.01%),             4us (0.00%, 0.00%),            40us (0.05%, 0.01%)
+Range                             2.35KB (0.00%, 0.00%),            39us (0.02%, 0.01%),             0us (0.00%, 0.00%),            39us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            28us (0.02%, 0.00%),             0us (0.00%, 0.00%),            28us (0.03%, 0.01%)
+Equal                               614B (0.00%, 0.00%),            24us (0.01%, 0.00%),             0us (0.00%, 0.00%),            24us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            17us (0.01%, 0.00%),             0us (0.00%, 0.00%),            17us (0.01%, 0.00%)
+All                                   0B (0.00%, 0.00%),            13us (0.00%, 0.00%),             0us (0.00%, 0.00%),            13us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             9us (0.00%, 0.00%),             0us (0.00%, 0.00%),             9us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           307B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.00%, 0.00%)
+
+======================End of Report==========================
+   5: cost=5.2602, accuracy= 0.0000, norm=15.258, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=40)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 3933.23MB (100.00%, 21.19%),     122.23ms (100.00%, 21.22%),      83.01ms (100.00%, 31.46%),      39.21ms (100.00%, 12.57%)
+Mul                          5324.72MB (78.81%, 28.69%),       88.60ms (78.78%, 15.38%),       49.50ms (68.54%, 18.76%),       39.05ms (87.43%, 12.52%)
+Transpose                    5198.67MB (50.12%, 28.01%),       79.16ms (63.40%, 13.74%),       39.47ms (49.78%, 14.96%),       39.67ms (74.91%, 12.72%)
+Sum                             37.94MB (22.12%, 0.20%),        46.41ms (49.65%, 8.06%),        17.53ms (34.81%, 6.64%),        28.86ms (62.19%, 9.25%)
+Add                           1249.26MB (21.91%, 6.73%),        32.77ms (41.60%, 5.69%),        19.46ms (28.17%, 7.38%),        13.28ms (52.94%, 4.26%)
+AddN                                  0B (0.00%, 0.00%),        28.27ms (35.91%, 4.91%),        19.42ms (20.79%, 7.36%),         8.84ms (48.68%, 2.83%)
+Select                        1260.78MB (15.18%, 6.79%),        27.59ms (31.00%, 4.79%),        22.89ms (13.43%, 8.67%),         4.71ms (45.85%, 1.51%)
+StackPushV2                           0B (0.00%, 0.00%),        15.79ms (26.21%, 2.74%),             0us (4.76%, 0.00%),        15.79ms (44.34%, 5.06%)
+TensorArrayScatterV3             81.11MB (8.39%, 0.44%),        13.90ms (23.47%, 2.41%),          2.44ms (4.76%, 0.92%),        11.46ms (39.27%, 3.67%)
+TensorArrayGatherV3              70.94MB (7.95%, 0.38%),        13.64ms (21.06%, 2.37%),           912us (3.84%, 0.35%),        12.73ms (35.60%, 4.08%)
+ZerosLike                      1241.57MB (7.57%, 6.69%),        11.30ms (18.69%, 1.96%),          3.29ms (3.49%, 1.25%),         8.01ms (31.52%, 2.57%)
+StackPopV2                            0B (0.00%, 0.00%),         9.94ms (16.72%, 1.72%),             0us (2.24%, 0.00%),         9.94ms (28.95%, 3.19%)
+Shape                            33.96KB (0.88%, 0.00%),         9.65ms (15.00%, 1.68%),             0us (2.24%, 0.00%),         9.65ms (25.76%, 3.09%)
+ApplyAdam                             0B (0.00%, 0.00%),         8.67ms (13.32%, 1.51%),           762us (2.24%, 0.29%),         7.89ms (22.67%, 2.53%)
+Reshape                             298B (0.88%, 0.00%),         6.54ms (11.82%, 1.14%),             0us (1.96%, 0.00%),         6.54ms (20.14%, 2.10%)
+MatMul                           41.22MB (0.88%, 0.22%),         5.73ms (10.68%, 0.99%),          2.31ms (1.96%, 0.88%),         3.40ms (18.04%, 1.09%)
+TensorArrayGradV3               217.78KB (0.66%, 0.00%),          5.30ms (9.69%, 0.92%),             0us (1.08%, 0.00%),         5.30ms (16.95%, 1.70%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.44KB (0.66%, 0.00%),          5.22ms (8.77%, 0.91%),             4us (1.08%, 0.00%),         5.22ms (15.25%, 1.67%)
+Sub                              40.32KB (0.66%, 0.00%),          4.69ms (7.86%, 0.81%),           781us (1.08%, 0.30%),         3.91ms (13.58%, 1.25%)
+Neg                              40.99MB (0.66%, 0.22%),          4.34ms (7.05%, 0.75%),           611us (0.78%, 0.23%),         3.73ms (12.33%, 1.19%)
+BroadcastGradientArgs             4.93KB (0.44%, 0.00%),          3.74ms (6.29%, 0.65%),             0us (0.55%, 0.00%),         3.74ms (11.13%, 1.20%)
+Merge                             3.11KB (0.44%, 0.00%),          2.81ms (5.64%, 0.49%),             0us (0.55%, 0.00%),          2.81ms (9.94%, 0.90%)
+ExpandDims                            0B (0.00%, 0.00%),          2.40ms (5.16%, 0.42%),             0us (0.55%, 0.00%),          2.40ms (9.03%, 0.77%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.25ms (4.74%, 0.39%),             0us (0.55%, 0.00%),          2.25ms (8.26%, 0.72%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.20ms (4.35%, 0.38%),           230us (0.55%, 0.09%),          1.97ms (7.54%, 0.63%)
+Pack                              8.47KB (0.44%, 0.00%),          2.03ms (3.97%, 0.35%),             4us (0.46%, 0.00%),          2.02ms (6.91%, 0.65%)
+NextIteration                         0B (0.00%, 0.00%),          1.90ms (3.61%, 0.33%),             0us (0.46%, 0.00%),          1.90ms (6.26%, 0.61%)
+Switch                                0B (0.00%, 0.00%),          1.67ms (3.29%, 0.29%),             0us (0.46%, 0.00%),          1.67ms (5.66%, 0.54%)
+StackV2                          13.59KB (0.44%, 0.00%),          1.65ms (2.99%, 0.29%),             0us (0.46%, 0.00%),          1.65ms (5.12%, 0.53%)
+CheckNumerics                     1.19KB (0.44%, 0.00%),          1.63ms (2.71%, 0.28%),             0us (0.46%, 0.00%),          1.63ms (4.59%, 0.52%)
+L2Loss                           19.99KB (0.44%, 0.00%),          1.61ms (2.43%, 0.28%),           224us (0.46%, 0.08%),          1.37ms (4.07%, 0.44%)
+StridedSlice                      4.60KB (0.44%, 0.00%),          1.48ms (2.15%, 0.26%),             0us (0.38%, 0.00%),          1.48ms (3.63%, 0.48%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.25ms (1.89%, 0.22%),             0us (0.38%, 0.00%),          1.25ms (3.15%, 0.40%)
+Const                             2.86KB (0.44%, 0.00%),          1.11ms (1.67%, 0.19%),             0us (0.38%, 0.00%),          1.11ms (2.75%, 0.36%)
+RealDiv                          62.80KB (0.44%, 0.00%),           870us (1.48%, 0.15%),           128us (0.38%, 0.05%),           737us (2.40%, 0.24%)
+GreaterEqual                     15.08KB (0.43%, 0.00%),           638us (1.33%, 0.11%),             0us (0.33%, 0.00%),           638us (2.16%, 0.20%)
+VariableV2                        1.88MB (0.43%, 0.01%),           638us (1.22%, 0.11%),             0us (0.33%, 0.00%),           638us (1.96%, 0.20%)
+Less                             30.63KB (0.42%, 0.00%),           549us (1.11%, 0.10%),             0us (0.33%, 0.00%),           549us (1.75%, 0.18%)
+TanhGrad                              0B (0.00%, 0.00%),           529us (1.01%, 0.09%),            89us (0.33%, 0.03%),           432us (1.58%, 0.14%)
+Tanh                                  0B (0.00%, 0.00%),           528us (0.92%, 0.09%),            65us (0.29%, 0.02%),           451us (1.44%, 0.14%)
+Enter                                 0B (0.00%, 0.00%),           496us (0.83%, 0.09%),             0us (0.27%, 0.00%),           496us (1.29%, 0.16%)
+OneHot                           39.47MB (0.42%, 0.21%),           445us (0.74%, 0.08%),           219us (0.27%, 0.08%),           226us (1.14%, 0.07%)
+SparseSoftmaxCrossEntropyWithLogits           896B (0.21%, 0.00%),           371us (0.66%, 0.06%),           203us (0.19%, 0.08%),           167us (1.06%, 0.05%)
+Mean                              2.38KB (0.21%, 0.00%),           327us (0.60%, 0.06%),            36us (0.11%, 0.01%),           287us (1.01%, 0.09%)
+Cast                              2.38KB (0.21%, 0.00%),           294us (0.54%, 0.05%),            25us (0.10%, 0.01%),           267us (0.92%, 0.09%)
+Tile                             91.99KB (0.21%, 0.00%),           276us (0.49%, 0.05%),            36us (0.09%, 0.01%),           237us (0.83%, 0.08%)
+Fill                             39.15MB (0.21%, 0.21%),           269us (0.44%, 0.05%),            63us (0.07%, 0.02%),           206us (0.76%, 0.07%)
+DynamicStitch                     1.79KB (0.00%, 0.00%),           261us (0.40%, 0.05%),            43us (0.05%, 0.02%),           218us (0.69%, 0.07%)
+Identity                              0B (0.00%, 0.00%),           225us (0.35%, 0.04%),             0us (0.03%, 0.00%),           225us (0.62%, 0.07%)
+InvertPermutation                     0B (0.00%, 0.00%),           205us (0.31%, 0.04%),             0us (0.03%, 0.00%),           205us (0.55%, 0.07%)
+LoopCond                              0B (0.00%, 0.00%),           195us (0.28%, 0.03%),             0us (0.03%, 0.00%),           195us (0.48%, 0.06%)
+SquaredDifference                40.32KB (0.00%, 0.00%),           144us (0.24%, 0.02%),            22us (0.03%, 0.01%),           121us (0.42%, 0.04%)
+Sqrt                                  0B (0.00%, 0.00%),           129us (0.22%, 0.02%),            15us (0.03%, 0.01%),           113us (0.38%, 0.04%)
+TensorArrayV3                     4.24KB (0.00%, 0.00%),           127us (0.20%, 0.02%),             0us (0.02%, 0.00%),           127us (0.34%, 0.04%)
+ControlTrigger                        0B (0.00%, 0.00%),           121us (0.17%, 0.02%),             0us (0.02%, 0.00%),           121us (0.30%, 0.04%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),           103us (0.15%, 0.02%),             0us (0.02%, 0.00%),           103us (0.26%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),            99us (0.14%, 0.02%),            13us (0.02%, 0.00%),            83us (0.23%, 0.03%)
+FloorDiv                          1.79KB (0.00%, 0.00%),            78us (0.12%, 0.01%),             0us (0.01%, 0.00%),            78us (0.21%, 0.03%)
+Maximum                              18B (0.00%, 0.00%),            78us (0.10%, 0.01%),             0us (0.01%, 0.00%),            78us (0.18%, 0.03%)
+ArgMax                              298B (0.00%, 0.00%),            75us (0.09%, 0.01%),            28us (0.01%, 0.01%),            47us (0.16%, 0.02%)
+Prod                                346B (0.00%, 0.00%),            73us (0.08%, 0.01%),             0us (0.00%, 0.00%),            73us (0.14%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            64us (0.07%, 0.01%),             0us (0.00%, 0.00%),            64us (0.12%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            64us (0.05%, 0.01%),             3us (0.00%, 0.00%),            60us (0.10%, 0.02%)
+IsNan                               298B (0.00%, 0.00%),            60us (0.04%, 0.01%),             3us (0.00%, 0.00%),            57us (0.08%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            42us (0.03%, 0.01%),             4us (0.00%, 0.00%),            38us (0.06%, 0.01%)
+Range                             2.28KB (0.00%, 0.00%),            40us (0.03%, 0.01%),             0us (0.00%, 0.00%),            40us (0.05%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            27us (0.02%, 0.00%),             0us (0.00%, 0.00%),            27us (0.03%, 0.01%)
+Equal                               596B (0.00%, 0.00%),            23us (0.01%, 0.00%),             0us (0.00%, 0.00%),            23us (0.03%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            18us (0.01%, 0.00%),             0us (0.00%, 0.00%),            18us (0.02%, 0.01%)
+All                                   0B (0.00%, 0.00%),            14us (0.01%, 0.00%),             0us (0.00%, 0.00%),            14us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             9us (0.00%, 0.00%),             0us (0.00%, 0.00%),             9us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           298B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.00%, 0.00%)
+
+======================End of Report==========================
+   6: cost=5.2756, accuracy= 0.0000, norm=13.710, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=60)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 3739.05MB (100.00%, 21.18%),     115.88ms (100.00%, 21.42%),      78.73ms (100.00%, 31.45%),      37.14ms (100.00%, 12.79%)
+Mul                          5062.66MB (78.82%, 28.67%),       83.98ms (78.58%, 15.52%),       46.90ms (68.55%, 18.73%),       37.02ms (87.21%, 12.75%)
+Transpose                    4945.60MB (50.15%, 28.01%),       72.44ms (63.06%, 13.39%),       37.33ms (49.82%, 14.91%),       35.09ms (74.46%, 12.08%)
+Sum                             36.14MB (22.15%, 0.20%),        44.05ms (49.67%, 8.14%),        16.65ms (34.91%, 6.65%),        27.37ms (62.38%, 9.43%)
+Add                           1187.35MB (21.94%, 6.72%),        31.08ms (41.53%, 5.74%),        18.48ms (28.26%, 7.38%),        12.58ms (52.95%, 4.33%)
+AddN                                  0B (0.00%, 0.00%),        26.84ms (35.78%, 4.96%),        18.45ms (20.88%, 7.37%),         8.38ms (48.62%, 2.89%)
+Select                        1197.67MB (15.22%, 6.78%),        26.16ms (30.82%, 4.83%),        21.70ms (13.51%, 8.67%),         4.46ms (45.73%, 1.54%)
+StackPushV2                           0B (0.00%, 0.00%),        14.71ms (25.99%, 2.72%),             0us (4.84%, 0.00%),        14.71ms (44.20%, 5.06%)
+TensorArrayScatterV3             79.46MB (8.43%, 0.45%),        12.99ms (23.27%, 2.40%),          2.37ms (4.84%, 0.95%),        10.61ms (39.14%, 3.65%)
+TensorArrayGatherV3              70.43MB (7.98%, 0.40%),        12.47ms (20.87%, 2.31%),           925us (3.89%, 0.37%),        11.55ms (35.48%, 3.98%)
+ZerosLike                      1180.70MB (7.59%, 6.69%),        10.14ms (18.57%, 1.87%),          3.12ms (3.52%, 1.25%),         7.02ms (31.51%, 2.42%)
+StackPopV2                            0B (0.00%, 0.00%),         9.38ms (16.69%, 1.73%),             0us (2.28%, 0.00%),         9.38ms (29.09%, 3.23%)
+Shape                            32.30KB (0.90%, 0.00%),         9.14ms (14.96%, 1.69%),             0us (2.28%, 0.00%),         9.14ms (25.86%, 3.15%)
+ApplyAdam                             0B (0.00%, 0.00%),         7.79ms (13.27%, 1.44%),           740us (2.28%, 0.30%),         7.04ms (22.71%, 2.42%)
+Reshape                             292B (0.90%, 0.00%),         6.18ms (11.83%, 1.14%),             0us (1.98%, 0.00%),         6.18ms (20.29%, 2.13%)
+MatMul                           40.38MB (0.90%, 0.23%),         5.45ms (10.69%, 1.01%),          2.24ms (1.98%, 0.90%),         3.18ms (18.16%, 1.09%)
+TensorArrayGradV3               206.96KB (0.67%, 0.00%),          4.89ms (9.68%, 0.90%),             0us (1.09%, 0.00%),         4.89ms (17.07%, 1.68%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.16KB (0.67%, 0.00%),          4.48ms (8.78%, 0.83%),             4us (1.09%, 0.00%),         4.48ms (15.39%, 1.54%)
+Sub                              39.49KB (0.67%, 0.00%),          4.45ms (7.95%, 0.82%),           737us (1.08%, 0.29%),         3.70ms (13.84%, 1.28%)
+Neg                              38.91MB (0.67%, 0.22%),          4.11ms (7.13%, 0.76%),           578us (0.79%, 0.23%),         3.53ms (12.57%, 1.22%)
+BroadcastGradientArgs             4.69KB (0.45%, 0.00%),          3.53ms (6.37%, 0.65%),             0us (0.56%, 0.00%),         3.53ms (11.35%, 1.22%)
+Merge                             2.95KB (0.45%, 0.00%),          2.66ms (5.71%, 0.49%),             0us (0.56%, 0.00%),         2.66ms (10.14%, 0.91%)
+ExpandDims                            0B (0.00%, 0.00%),          2.28ms (5.22%, 0.42%),             0us (0.56%, 0.00%),          2.28ms (9.22%, 0.78%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.13ms (4.80%, 0.39%),             0us (0.56%, 0.00%),          2.13ms (8.44%, 0.73%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.08ms (4.41%, 0.38%),           216us (0.56%, 0.09%),          1.86ms (7.71%, 0.64%)
+Pack                              8.16KB (0.45%, 0.00%),          1.92ms (4.02%, 0.35%),             4us (0.47%, 0.00%),          1.92ms (7.06%, 0.66%)
+NextIteration                         0B (0.00%, 0.00%),          1.78ms (3.67%, 0.33%),             0us (0.47%, 0.00%),          1.78ms (6.40%, 0.61%)
+CheckNumerics                     1.17KB (0.45%, 0.00%),          1.60ms (3.34%, 0.30%),             0us (0.47%, 0.00%),          1.60ms (5.79%, 0.55%)
+Switch                                0B (0.00%, 0.00%),          1.58ms (3.04%, 0.29%),             0us (0.47%, 0.00%),          1.58ms (5.24%, 0.55%)
+L2Loss                           19.57KB (0.45%, 0.00%),          1.57ms (2.75%, 0.29%),           219us (0.47%, 0.09%),          1.33ms (4.69%, 0.46%)
+StackV2                          13.33KB (0.45%, 0.00%),          1.48ms (2.46%, 0.27%),             0us (0.38%, 0.00%),          1.48ms (4.24%, 0.51%)
+StridedSlice                      4.48KB (0.45%, 0.00%),          1.41ms (2.19%, 0.26%),             0us (0.38%, 0.00%),          1.41ms (3.72%, 0.48%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.18ms (1.93%, 0.22%),             0us (0.38%, 0.00%),          1.18ms (3.24%, 0.41%)
+Const                             2.80KB (0.45%, 0.00%),          1.07ms (1.71%, 0.20%),             0us (0.38%, 0.00%),          1.07ms (2.83%, 0.37%)
+RealDiv                          61.73KB (0.45%, 0.00%),           846us (1.51%, 0.16%),           117us (0.38%, 0.05%),           712us (2.46%, 0.25%)
+VariableV2                        1.84MB (0.45%, 0.01%),           617us (1.35%, 0.11%),             0us (0.34%, 0.00%),           617us (2.22%, 0.21%)
+GreaterEqual                     14.32KB (0.44%, 0.00%),           604us (1.24%, 0.11%),             0us (0.34%, 0.00%),           604us (2.01%, 0.21%)
+Less                             29.11KB (0.44%, 0.00%),           520us (1.13%, 0.10%),             0us (0.34%, 0.00%),           520us (1.80%, 0.18%)
+TanhGrad                              0B (0.00%, 0.00%),           514us (1.03%, 0.10%),            86us (0.34%, 0.03%),           419us (1.62%, 0.14%)
+Tanh                                  0B (0.00%, 0.00%),           511us (0.94%, 0.09%),            65us (0.30%, 0.03%),           438us (1.47%, 0.15%)
+Enter                                 0B (0.00%, 0.00%),           482us (0.84%, 0.09%),             0us (0.28%, 0.00%),           482us (1.32%, 0.17%)
+OneHot                           38.66MB (0.44%, 0.22%),           416us (0.75%, 0.08%),           212us (0.28%, 0.08%),           204us (1.16%, 0.07%)
+SparseSoftmaxCrossEntropyWithLogits           877B (0.22%, 0.00%),           357us (0.68%, 0.07%),           198us (0.19%, 0.08%),           159us (1.09%, 0.05%)
+Mean                              2.34KB (0.22%, 0.00%),           316us (0.61%, 0.06%),            35us (0.11%, 0.01%),           278us (1.03%, 0.10%)
+Cast                              2.34KB (0.22%, 0.00%),           284us (0.55%, 0.05%),            25us (0.10%, 0.01%),           258us (0.94%, 0.09%)
+Tile                             90.33KB (0.22%, 0.00%),           266us (0.50%, 0.05%),            35us (0.09%, 0.01%),           227us (0.85%, 0.08%)
+DynamicStitch                     1.75KB (0.22%, 0.00%),           254us (0.45%, 0.05%),            39us (0.08%, 0.02%),           211us (0.77%, 0.07%)
+Fill                             38.35MB (0.22%, 0.22%),           244us (0.40%, 0.05%),            62us (0.06%, 0.02%),           182us (0.70%, 0.06%)
+Identity                              0B (0.00%, 0.00%),           215us (0.36%, 0.04%),             0us (0.03%, 0.00%),           215us (0.63%, 0.07%)
+InvertPermutation                     0B (0.00%, 0.00%),           195us (0.32%, 0.04%),             0us (0.03%, 0.00%),           195us (0.56%, 0.07%)
+LoopCond                              0B (0.00%, 0.00%),           185us (0.28%, 0.03%),             0us (0.03%, 0.00%),           185us (0.49%, 0.06%)
+SquaredDifference                39.49KB (0.00%, 0.00%),           139us (0.25%, 0.03%),            21us (0.03%, 0.01%),           116us (0.43%, 0.04%)
+Sqrt                                  0B (0.00%, 0.00%),           126us (0.22%, 0.02%),            15us (0.03%, 0.01%),           109us (0.39%, 0.04%)
+TensorArrayV3                     4.16KB (0.00%, 0.00%),           122us (0.20%, 0.02%),             0us (0.02%, 0.00%),           122us (0.35%, 0.04%)
+ControlTrigger                        0B (0.00%, 0.00%),           115us (0.18%, 0.02%),             0us (0.02%, 0.00%),           115us (0.31%, 0.04%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),            98us (0.15%, 0.02%),             0us (0.02%, 0.00%),            98us (0.27%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),            95us (0.14%, 0.02%),            13us (0.02%, 0.01%),            81us (0.24%, 0.03%)
+Maximum                              18B (0.00%, 0.00%),            77us (0.12%, 0.01%),             0us (0.02%, 0.00%),            77us (0.21%, 0.03%)
+FloorDiv                          1.75KB (0.00%, 0.00%),            73us (0.10%, 0.01%),             0us (0.02%, 0.00%),            73us (0.18%, 0.03%)
+ArgMax                              292B (0.00%, 0.00%),            72us (0.09%, 0.01%),            28us (0.02%, 0.01%),            44us (0.16%, 0.02%)
+Prod                                340B (0.00%, 0.00%),            69us (0.08%, 0.01%),             0us (0.00%, 0.00%),            69us (0.14%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            63us (0.07%, 0.01%),             0us (0.00%, 0.00%),            63us (0.12%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            61us (0.05%, 0.01%),             3us (0.00%, 0.00%),            57us (0.10%, 0.02%)
+IsNan                               292B (0.00%, 0.00%),            58us (0.04%, 0.01%),             3us (0.00%, 0.00%),            54us (0.08%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            40us (0.03%, 0.01%),             4us (0.00%, 0.00%),            36us (0.06%, 0.01%)
+Range                             2.24KB (0.00%, 0.00%),            38us (0.02%, 0.01%),             0us (0.00%, 0.00%),            38us (0.05%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.03%, 0.01%)
+Equal                               584B (0.00%, 0.00%),            22us (0.01%, 0.00%),             0us (0.00%, 0.00%),            22us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            17us (0.01%, 0.00%),             0us (0.00%, 0.00%),            17us (0.02%, 0.01%)
+All                                   0B (0.00%, 0.00%),            13us (0.01%, 0.00%),             0us (0.00%, 0.00%),            13us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             9us (0.00%, 0.00%),             0us (0.00%, 0.00%),             9us (0.01%, 0.00%)
+ConstantFolding/variables/truediv_recip           292B (0.00%, 0.00%),             7us (0.00%, 0.00%),             0us (0.00%, 0.00%),             7us (0.00%, 0.00%)
+
+======================End of Report==========================
+   7: cost=5.1756, accuracy= 0.0000, norm=12.941, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=51)
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+Incomplete shape.
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  1
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 1
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              0
+-min_occurrence             0
+-step                       -1
+-order_by                   micros
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     bytes,micros
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+op: The nodes are operation kernel type, such as MatMul, Conv2D. Graph nodes belonging to the same type are aggregated together.
+requested bytes: The memory requested by the operation, accumulatively.
+total execution time: Sum of accelerator execution time and cpu execution time.
+cpu execution time: The time from the start to the end of the operation. It's the sum of actual cpu run time plus the time that it spends waiting if part of computation is launched asynchronously.
+accelerator execution time: Time spent executing on the accelerator. This is normally measured by the actual hardware library.
+
+Profile:
+node name | requested bytes | total execution time | accelerator execution time | cpu execution time
+BatchMatMul                 4089.21MB (100.00%, 21.18%),     140.70ms (100.00%, 23.66%),      86.13ms (100.00%, 31.47%),      54.56ms (100.00%, 17.00%)
+Mul                          5540.19MB (78.82%, 28.69%),       91.83ms (76.34%, 15.44%),       51.36ms (68.53%, 18.77%),       40.41ms (83.00%, 12.59%)
+Transpose                    5412.42MB (50.13%, 28.03%),       75.39ms (60.90%, 12.67%),       40.83ms (49.76%, 14.92%),       34.55ms (70.40%, 10.77%)
+Sum                             39.46MB (22.10%, 0.20%),        48.23ms (48.23%, 8.11%),        18.23ms (34.84%, 6.66%),        29.98ms (59.63%, 9.35%)
+Add                           1299.96MB (21.89%, 6.73%),        34.00ms (40.12%, 5.72%),        20.26ms (28.18%, 7.40%),        13.72ms (50.29%, 4.28%)
+AddN                                  0B (0.00%, 0.00%),        29.39ms (34.40%, 4.94%),        20.21ms (20.78%, 7.38%),         9.18ms (46.01%, 2.86%)
+Select                        1309.72MB (15.16%, 6.78%),        28.64ms (29.46%, 4.82%),        23.77ms (13.39%, 8.68%),         4.87ms (43.15%, 1.52%)
+StackPushV2                           0B (0.00%, 0.00%),        15.61ms (24.65%, 2.62%),             0us (4.71%, 0.00%),        15.61ms (41.63%, 4.87%)
+TensorArrayScatterV3             83.43MB (8.38%, 0.43%),        13.18ms (22.02%, 2.22%),          2.49ms (4.71%, 0.91%),        10.69ms (36.77%, 3.33%)
+TensorArrayGatherV3              71.65MB (7.94%, 0.37%),        11.98ms (19.81%, 2.01%),           919us (3.80%, 0.34%),        11.05ms (33.43%, 3.45%)
+StackPopV2                            0B (0.00%, 0.00%),        10.28ms (17.79%, 1.73%),             0us (3.46%, 0.00%),        10.28ms (29.99%, 3.21%)
+ZerosLike                      1293.36MB (7.57%, 6.70%),        10.23ms (16.06%, 1.72%),          3.42ms (3.46%, 1.25%),         6.81ms (26.78%, 2.12%)
+Shape                            35.28KB (0.87%, 0.00%),         9.87ms (14.34%, 1.66%),             0us (2.21%, 0.00%),         9.87ms (24.66%, 3.08%)
+ApplyAdam                             0B (0.00%, 0.00%),         7.61ms (12.69%, 1.28%),           773us (2.21%, 0.28%),         6.81ms (21.59%, 2.12%)
+Reshape                             307B (0.87%, 0.00%),         6.76ms (11.41%, 1.14%),             0us (1.93%, 0.00%),         6.76ms (19.46%, 2.11%)
+MatMul                           42.60MB (0.87%, 0.22%),         5.60ms (10.27%, 0.94%),          2.36ms (1.93%, 0.86%),         3.21ms (17.36%, 1.00%)
+TensorArrayGradV3               226.65KB (0.65%, 0.00%),          5.13ms (9.33%, 0.86%),             0us (1.07%, 0.00%),         5.13ms (16.36%, 1.60%)
+Sub                              41.47KB (0.65%, 0.00%),          4.84ms (8.47%, 0.81%),           808us (1.07%, 0.30%),         4.03ms (14.76%, 1.26%)
+Neg                              42.60MB (0.65%, 0.22%),          4.51ms (7.65%, 0.76%),           629us (0.77%, 0.23%),         3.87ms (13.50%, 1.21%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_Leaf_1_add_4        13.82KB (0.43%, 0.00%),          4.19ms (6.89%, 0.70%),             4us (0.54%, 0.00%),         4.18ms (12.29%, 1.30%)
+BroadcastGradientArgs             5.12KB (0.43%, 0.00%),          3.85ms (6.19%, 0.65%),             0us (0.54%, 0.00%),         3.85ms (10.99%, 1.20%)
+Merge                             3.24KB (0.43%, 0.00%),          2.92ms (5.54%, 0.49%),             0us (0.54%, 0.00%),          2.92ms (9.79%, 0.91%)
+ExpandDims                            0B (0.00%, 0.00%),          2.47ms (5.05%, 0.41%),             0us (0.54%, 0.00%),          2.47ms (8.88%, 0.77%)
+TensorArrayWriteV3                    0B (0.00%, 0.00%),          2.33ms (4.64%, 0.39%),             0us (0.54%, 0.00%),          2.33ms (8.11%, 0.73%)
+LogicalAnd                            0B (0.00%, 0.00%),          2.26ms (4.25%, 0.38%),           237us (0.54%, 0.09%),          2.03ms (7.39%, 0.63%)
+Pack                              8.76KB (0.43%, 0.00%),          2.06ms (3.86%, 0.35%),             4us (0.45%, 0.00%),          2.05ms (6.76%, 0.64%)
+NextIteration                         0B (0.00%, 0.00%),          1.95ms (3.52%, 0.33%),             0us (0.45%, 0.00%),          1.95ms (6.12%, 0.61%)
+Switch                                0B (0.00%, 0.00%),          1.74ms (3.19%, 0.29%),             0us (0.45%, 0.00%),          1.74ms (5.51%, 0.54%)
+CheckNumerics                     1.23KB (0.43%, 0.00%),          1.69ms (2.90%, 0.28%),             0us (0.45%, 0.00%),          1.69ms (4.97%, 0.53%)
+L2Loss                           20.57KB (0.43%, 0.00%),          1.63ms (2.61%, 0.27%),           228us (0.45%, 0.08%),          1.39ms (4.44%, 0.43%)
+StridedSlice                      4.75KB (0.43%, 0.00%),          1.51ms (2.34%, 0.25%),             0us (0.37%, 0.00%),          1.51ms (4.01%, 0.47%)
+StackV2                          14.02KB (0.43%, 0.00%),          1.44ms (2.09%, 0.24%),             0us (0.37%, 0.00%),          1.44ms (3.54%, 0.45%)
+TensorArrayReadV3                     0B (0.00%, 0.00%),          1.29ms (1.85%, 0.22%),             0us (0.37%, 0.00%),          1.29ms (3.09%, 0.40%)
+Const                             2.94KB (0.43%, 0.00%),          1.12ms (1.63%, 0.19%),             0us (0.37%, 0.00%),          1.12ms (2.69%, 0.35%)
+RealDiv                          64.99KB (0.43%, 0.00%),           880us (1.44%, 0.15%),           128us (0.37%, 0.05%),           739us (2.33%, 0.23%)
+GreaterEqual                     15.70KB (0.43%, 0.00%),           660us (1.29%, 0.11%),             0us (0.32%, 0.00%),           660us (2.10%, 0.21%)
+VariableV2                        1.93MB (0.43%, 0.01%),           634us (1.18%, 0.11%),             0us (0.32%, 0.00%),           634us (1.90%, 0.20%)
+Less                             31.88KB (0.42%, 0.00%),           566us (1.07%, 0.10%),             0us (0.32%, 0.00%),           566us (1.70%, 0.18%)
+TanhGrad                              0B (0.00%, 0.00%),           538us (0.98%, 0.09%),            90us (0.32%, 0.03%),           437us (1.52%, 0.14%)
+Tanh                                  0B (0.00%, 0.00%),           530us (0.89%, 0.09%),            67us (0.29%, 0.02%),           455us (1.39%, 0.14%)
+Enter                                 0B (0.00%, 0.00%),           491us (0.80%, 0.08%),             0us (0.27%, 0.00%),           491us (1.25%, 0.15%)
+OneHot                           40.60MB (0.42%, 0.21%),           425us (0.72%, 0.07%),           223us (0.27%, 0.08%),           202us (1.09%, 0.06%)
+SparseSoftmaxCrossEntropyWithLogits           921B (0.21%, 0.00%),           375us (0.64%, 0.06%),           209us (0.18%, 0.08%),           166us (1.03%, 0.05%)
+Mean                              2.46KB (0.21%, 0.00%),           332us (0.58%, 0.06%),            36us (0.11%, 0.01%),           291us (0.98%, 0.09%)
+Cast                              2.46KB (0.21%, 0.00%),           298us (0.53%, 0.05%),            25us (0.10%, 0.01%),           269us (0.89%, 0.08%)
+Tile                             95.03KB (0.21%, 0.00%),           279us (0.48%, 0.05%),            37us (0.09%, 0.01%),           239us (0.80%, 0.07%)
+DynamicStitch                     1.84KB (0.21%, 0.00%),           265us (0.43%, 0.04%),            43us (0.07%, 0.02%),           219us (0.73%, 0.07%)
+Fill                             40.27MB (0.21%, 0.21%),           241us (0.38%, 0.04%),            65us (0.06%, 0.02%),           176us (0.66%, 0.05%)
+Identity                              0B (0.00%, 0.00%),           226us (0.34%, 0.04%),             0us (0.03%, 0.00%),           226us (0.61%, 0.07%)
+InvertPermutation                     0B (0.00%, 0.00%),           213us (0.31%, 0.04%),             0us (0.03%, 0.00%),           213us (0.54%, 0.07%)
+LoopCond                              0B (0.00%, 0.00%),           202us (0.27%, 0.03%),             0us (0.03%, 0.00%),           202us (0.47%, 0.06%)
+SquaredDifference                41.47KB (0.00%, 0.00%),           145us (0.24%, 0.02%),            23us (0.03%, 0.01%),           121us (0.41%, 0.04%)
+Sqrt                                  0B (0.00%, 0.00%),           130us (0.21%, 0.02%),            15us (0.02%, 0.01%),           114us (0.37%, 0.04%)
+ControlTrigger                        0B (0.00%, 0.00%),           126us (0.19%, 0.02%),             0us (0.02%, 0.00%),           126us (0.33%, 0.04%)
+TensorArrayV3                     4.37KB (0.00%, 0.00%),           125us (0.17%, 0.02%),             0us (0.02%, 0.00%),           125us (0.29%, 0.04%)
+ConstantFolding/optimizer/gradients/b_count_enter             0B (0.00%, 0.00%),           107us (0.15%, 0.02%),             0us (0.02%, 0.00%),           107us (0.26%, 0.03%)
+SqrtGrad                              0B (0.00%, 0.00%),            98us (0.13%, 0.02%),            13us (0.02%, 0.00%),            83us (0.22%, 0.03%)
+Maximum                              18B (0.00%, 0.00%),            78us (0.11%, 0.01%),             0us (0.01%, 0.00%),            78us (0.20%, 0.02%)
+FloorDiv                          1.84KB (0.00%, 0.00%),            76us (0.10%, 0.01%),             0us (0.01%, 0.00%),            76us (0.17%, 0.02%)
+ArgMax                              307B (0.00%, 0.00%),            75us (0.09%, 0.01%),            29us (0.01%, 0.01%),            46us (0.15%, 0.01%)
+Prod                                355B (0.00%, 0.00%),            71us (0.07%, 0.01%),             0us (0.00%, 0.00%),            71us (0.13%, 0.02%)
+Assign                                0B (0.00%, 0.00%),            66us (0.06%, 0.01%),             0us (0.00%, 0.00%),            66us (0.11%, 0.02%)
+Minimum                               0B (0.00%, 0.00%),            62us (0.05%, 0.01%),             3us (0.00%, 0.00%),            59us (0.09%, 0.02%)
+IsNan                               307B (0.00%, 0.00%),            59us (0.04%, 0.01%),             3us (0.00%, 0.00%),            55us (0.07%, 0.02%)
+model/inference_module/ArithmeticOptimizer/AddOpsRewrite_add_4             0B (0.00%, 0.00%),            41us (0.03%, 0.01%),             4us (0.00%, 0.00%),            36us (0.06%, 0.01%)
+Range                             2.35KB (0.00%, 0.00%),            38us (0.02%, 0.01%),             0us (0.00%, 0.00%),            38us (0.04%, 0.01%)
+Exit                                  0B (0.00%, 0.00%),            26us (0.02%, 0.00%),             0us (0.00%, 0.00%),            26us (0.03%, 0.01%)
+Equal                               614B (0.00%, 0.00%),            22us (0.01%, 0.00%),             0us (0.00%, 0.00%),            22us (0.02%, 0.01%)
+Max                                   4B (0.00%, 0.00%),            17us (0.01%, 0.00%),             0us (0.00%, 0.00%),            17us (0.02%, 0.01%)
+All                                   0B (0.00%, 0.00%),            13us (0.01%, 0.00%),             0us (0.00%, 0.00%),            13us (0.01%, 0.00%)
+ConcatV2                              0B (0.00%, 0.00%),             9us (0.00%, 0.00%),             0us (0.00%, 0.00%),             9us (0.01%, 0.00%)
+ConstantFolding/optimizer/gradients/model/inference_module/einsum/Mul_grad/BroadcastGradientArgs-bcastargs-1             0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.01%, 0.00%)
+Assert                                0B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.00%, 0.00%)
+ConstantFolding/variables/truediv_recip           307B (0.00%, 0.00%),             6us (0.00%, 0.00%),             0us (0.00%, 0.00%),             6us (0.00%, 0.00%)
+
+======================End of Report==========================
+   8: cost=5.1293, accuracy= 0.0000, norm=06.991, lr=0.0001 (epochs=0.0, steps/min= 2, stories/min=50)
+slurmstepd: error: *** JOB 19738637 ON cdr348 CANCELLED AT 2019-04-18T16:18:33 ***

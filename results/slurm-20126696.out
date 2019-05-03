@@ -1,0 +1,24 @@
+Using TensorFlow backend.
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+read train ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_train.pik
+read valid ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_valid.pik
+read test ...
+accessing cache_path:  tasks/en-valid-10k-pik/qa0_test.pik
+Traceback (most recent call last):
+  File "train.py", line 18, in <module>
+    from tpr_rnn_graph import * 
+  File "/scratch/abounasm/ift6760/tpr_rnn_graph.py", line 59, in <module>
+    logger = init_logger(c.log_folder) # will not log tensorflow outputs like GPU infos and warnings
+  File "/scratch/abounasm/ift6760/lib.py", line 111, in init_logger
+    os.makedirs(log_folder)
+  File "/home/abounasm/.conda/envs/udem/lib/python3.7/os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: 'logs/default/0/try_44'

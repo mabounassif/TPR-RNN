@@ -1,0 +1,158 @@
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py:1419: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Configuration:
+{'LN': True,
+ 'beta1': 0.9,
+ 'beta2': 0.999,
+ 'data_path': 'tasks/en-valid-10k',
+ 'decay_factor': 0.5,
+ 'decay_thresh': 0.1,
+ 'do_decay': True,
+ 'do_warm_up': True,
+ 'entity_size': 90,
+ 'hidden_size': 40,
+ 'init_limit': 0.1,
+ 'learning_rate': 0.001,
+ 'log_folder': 'logs/default/0/',
+ 'log_keyword': 'default',
+ 'max_gradient_norm': 5.0,
+ 'role_size': 20,
+ 'symbol_size': 179,
+ 'task_id': 0,
+ 'tt_rank': 10,
+ 'vocab_size': 179,
+ 'warm_up_factor': 0.1,
+ 'warm_up_steps': 50}
+
+WARNING:tensorflow:From /scratch/abounasm/ift6760/tpr_rnn_graph.py:241: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/abounasm/.conda/envs/udem/lib/python3.7/site-packages/tensorflow/python/ops/losses/losses_impl.py:209: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+all trainable tensorflow variables:
+[<tf.Variable 'variables/word_embedding:0' shape=(179, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/story_position_embedding:0' shape=(12, 179) dtype=float32_ref>,
+ <tf.Variable 'variables/output_embedding:0' shape=(90, 179) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/update_module/story_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net0_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_w:0' shape=(40, 90) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_entity/W2_net1_b:0' shape=(90,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net0_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net0_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net1_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net1_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_w:0' shape=(179, 40) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W1_net2_b:0' shape=(40,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_w:0' shape=(40, 20) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/query_roles/W2_net2_b:0' shape=(20,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/one_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/two_step/LN_bias:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_gain:0' shape=(1,) dtype=float32_ref>,
+ <tf.Variable 'model/inference_module/three_step/LN_bias:0' shape=(1,) dtype=float32_ref>]
+total number of trainable parameters: 141985 
+
+2019-04-23 22:25:39.528005: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-04-23 22:25:41.207089: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2200035000 Hz
+2019-04-23 22:25:41.779503: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x556a2b4d5320 executing computations on platform Host. Devices:
+2019-04-23 22:25:41.784438: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-04-23 22:25:42.234529: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x556a2b5ce480 executing computations on platform CUDA. Devices:
+2019-04-23 22:25:42.234660: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): Tesla P100-PCIE-12GB, Compute Capability 6.0
+2019-04-23 22:25:42.276236: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla P100-PCIE-12GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.66GiB
+2019-04-23 22:25:42.276352: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-04-23 22:25:42.352151: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-04-23 22:25:42.352237: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-04-23 22:25:42.352289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-04-23 22:25:42.364554: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11338 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-12GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+2019-04-23 22:27:33.807315: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.9.0 locally
+2019-04-23 22:27:38.063414: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcupti.so.9.0 locally
+2019-04-23 22:27:39.718635: I tensorflow/core/kernels/cuda_solvers.cc:159] Creating CudaSolver handles for stream 0x556a2b44b390
+   0: cost=5.1819, accuracy= 0.0000, norm=13.518, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 0)
+   1: cost=4.9592, accuracy= 0.0625, norm=35.385, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=12)
+   2: cost=5.1886, accuracy= 0.0312, norm=22.559, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=12)
+   3: cost=5.4727, accuracy= 0.0000, norm=14.478, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 8)
+   4: cost=5.2018, accuracy= 0.0000, norm=24.492, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=28)
+   5: cost=5.4273, accuracy= 0.0000, norm=14.769, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=21)
+   6: cost=5.5855, accuracy= 0.0625, norm=25.851, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+   7: cost=5.1826, accuracy= 0.0625, norm=22.562, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+   8: cost=5.2846, accuracy= 0.0312, norm=09.273, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+   9: cost=5.1425, accuracy= 0.0000, norm=05.202, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=17)
+  10: cost=5.1169, accuracy= 0.0625, norm=10.907, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=11)
+  11: cost=4.9925, accuracy= 0.0312, norm=08.210, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=17)
+  12: cost=5.0550, accuracy= 0.1250, norm=05.820, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=23)
+  13: cost=4.9069, accuracy= 0.0625, norm=07.015, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  14: cost=4.9775, accuracy= 0.0312, norm=05.613, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=18)
+  15: cost=5.0560, accuracy= 0.0312, norm=40.487, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  16: cost=4.8646, accuracy= 0.0312, norm=13.521, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  17: cost=4.4437, accuracy= 0.0938, norm=41.401, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  18: cost=4.9520, accuracy= 0.0312, norm=21.355, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=12)
+  19: cost=4.2168, accuracy= 0.0625, norm=40.211, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  20: cost=4.6604, accuracy= 0.0312, norm=28.410, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 8)
+  21: cost=4.3635, accuracy= 0.0312, norm=22.942, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 8)
+  22: cost=4.8371, accuracy= 0.0000, norm=28.001, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=18)
+  23: cost=4.7860, accuracy= 0.0000, norm=31.166, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  24: cost=4.5982, accuracy= 0.0312, norm=21.761, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 9)
+  25: cost=4.3225, accuracy= 0.0938, norm=22.294, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=17)
+  26: cost=4.4455, accuracy= 0.0938, norm=11.761, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  27: cost=4.5579, accuracy= 0.0312, norm=06.587, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=11)
+  28: cost=4.1725, accuracy= 0.0312, norm=13.645, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=10)
+  29: cost=4.3738, accuracy= 0.1250, norm=15.013, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  30: cost=4.0969, accuracy= 0.0938, norm=11.046, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=13)
+  31: cost=4.1677, accuracy= 0.0312, norm=26.137, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=12)
+  32: cost=4.4833, accuracy= 0.0625, norm=10.678, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=25)
+  33: cost=4.2422, accuracy= 0.0625, norm=07.299, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  34: cost=4.4280, accuracy= 0.0312, norm=14.090, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=10)
+  35: cost=4.1254, accuracy= 0.1875, norm=09.555, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=11)
+  36: cost=3.8148, accuracy= 0.0938, norm=09.562, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=19)
+  37: cost=4.0619, accuracy= 0.0938, norm=24.774, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=11)
+  38: cost=4.0771, accuracy= 0.1562, norm=13.492, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=21)
+  39: cost=4.3819, accuracy= 0.0625, norm=11.789, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=10)
+  40: cost=3.4571, accuracy= 0.1562, norm=11.636, lr=0.0001 (epochs=0.0, steps/min= 1, stories/min=25)
+  41: cost=3.8022, accuracy= 0.0312, norm=12.799, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  42: cost=3.5082, accuracy= 0.1875, norm=13.640, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  43: cost=4.1436, accuracy= 0.0938, norm=89.430, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  44: cost=3.8737, accuracy= 0.0938, norm=23.768, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  45: cost=3.6320, accuracy= 0.1562, norm=14.123, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  46: cost=4.0395, accuracy= 0.1562, norm=04.951, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  47: cost=3.0972, accuracy= 0.1562, norm=05.861, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+  48: cost=3.3065, accuracy= 0.1875, norm=07.452, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min=15)
+  49: cost=3.6641, accuracy= 0.0938, norm=13.620, lr=0.0001 (epochs=0.0, steps/min= 0, stories/min= 7)
+slurmstepd: error: *** JOB 20075389 ON cdr341 CANCELLED AT 2019-04-24T08:21:43 DUE TO TIME LIMIT ***
